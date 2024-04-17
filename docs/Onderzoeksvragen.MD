@@ -1,9 +1,9 @@
 # Probleemstelling en Onderzoeksvragen
 
-Naam Student: _______________________ 
+Naam Student: Mary Anyanwu
 Datum: _______________________
 
-# Criteria onderzoeksthema:
+# Criteria onderzoeksthema: Cookie toestemming
 
 1. Het thema/vraagstuk sluit aan bij de technische opdracht
 van de leerroute
