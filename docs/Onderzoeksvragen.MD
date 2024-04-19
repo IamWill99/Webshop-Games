@@ -40,7 +40,7 @@ Een diepgaand begrip van hoe verschillende methoden van cookie-toestemming de ge
 
 **Het voor mijn publiek interessante issue dat op het gebied van het afgebakende thema speelt is:**
 
-Het evenwicht tussen gebruikersgemak en privacybescherming bij het verzamelen van cookies op webshops.
+Het evenwicht tussen gebruiksgemak en privacybescherming bij het verzamelen van cookies op webshops.
 
 ## G. VRAAGSTELLING 1*
 
