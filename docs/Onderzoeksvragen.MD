@@ -64,7 +64,7 @@ Privacyperceptie: De perceptie van gebruikers over hoe hun privacy wordt gewaarb
 
 **De deelvragen van mijn onderzoek zijn:**
 
-Welke verschillende methoden van cookie-toestemming worden momenteel gebruikt door webshops?
+. Welke verschillende methoden van cookie-toestemming worden momenteel gebruikt door webshops?
 
 Hoe ervaren gebruikers de verschillende methoden van cookie-toestemming tijdens het browsen op webshops?
 
