@@ -56,9 +56,9 @@ Gebruikerservaring: De algehele ervaring van een gebruiker tijdens het navigeren
 Privacyperceptie: De perceptie van gebruikers over hoe hun privacy wordt gewaarborgd en gerespecteerd tijdens het gebruik van een website.
 
 
-## I. VRAAGSTELLING 2**
+## I. VRAAGSTELLING 2
 
-De deelvragen van mijn onderzoek zijn:
+**De deelvragen van mijn onderzoek zijn:**
 
 Welke verschillende methoden van cookie-toestemming worden momenteel gebruikt door webshops?
 
