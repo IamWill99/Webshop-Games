@@ -262,7 +262,7 @@ export class Root extends LitElement {
                 <div class="hero-image">
                     <div class="hero-text">
                         <h1 style="font-size:50px">Promotion Banner</h1>
-                        <a href="https://gitlab.fdmci.hva.nl/propedeuse-hbo-ict/onderwijs/2023-2024/out-b-se-bim/blok-4/huukuuvuujoo20">
+                        <a href="">
                             <button class="button button1">More information</button>
                         </a>
                     </div>
