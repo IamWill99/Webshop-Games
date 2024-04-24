@@ -60,6 +60,29 @@ export class Root extends LitElement {
             display: block;
             margin-bottom: 5px;
         }
+
+        .hero-text {
+            text-align: center;
+            color: black;
+            padding-top: 150px;
+          }
+        .hero-image{
+            background: lightgrey;
+            height: 500px;
+        }
+
+        .button1{
+            background-color: red;
+            color: white;
+            font-size: 15px;
+            border-radius: 50px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            border-style: solid;
+            border-color: red;
+        }
+
     `;
 
     @state()
@@ -235,6 +258,16 @@ export class Root extends LitElement {
                     ${this.renderLogoutInNav()}
                 </nav>
             </header>
+            <body>
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <h1 style="font-size:50px">Promotion Banner</h1>
+                        <a href="https://gitlab.fdmci.hva.nl/propedeuse-hbo-ict/onderwijs/2023-2024/out-b-se-bim/blok-4/huukuuvuujoo20">
+                            <button class="button button1">More information</button>
+                        </a>
+                    </div>
+                </div>
+            </body>
             <main>${contentTemplate}</main>
             <footer>Copyright &copy; Luca Stars 2024</footer>
         `;
