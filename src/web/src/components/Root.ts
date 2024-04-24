@@ -25,7 +25,7 @@ export class Root extends LitElement {
             background-color: #fbfbfa;
             padding: 10px;
             position: relative;
-            left: 50px;
+            padding-left: 70px;
         }
 
         main {
