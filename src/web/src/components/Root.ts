@@ -11,6 +11,9 @@ enum RouterPage {
     Home = "orderItems",
     Login = "login",
     Register = "register",
+    AboutUs = "AboutUs", // New route for About Us
+    Shipping = "shipping",
+    Returns = "Returns",  // New route for returns
 }
 
 /**
@@ -21,6 +24,11 @@ enum RouterPage {
 @customElement("webshop-root")
 export class Root extends LitElement {
     public static styles = css`
+
+footer {
+        color: #ecae20;
+    }
+
         header {
             background-color: #fbfbfa;
             padding: 10px;
@@ -31,7 +39,7 @@ export class Root extends LitElement {
         }
 
         footer {
-            background-color: #ecae20;
+            background-color: rgb(18,26,132);
             padding: 10px;
             text-align: center;
         }
@@ -58,6 +66,51 @@ export class Root extends LitElement {
             display: block;
             margin-bottom: 5px;
         }
+        
+        /* h3 {
+            color: black !important;
+        } */
+
+        .footer-section h3 {
+    color: white !important;
+}
+
+.footer-section, .footer-section p, .footer-section ul, .footer-section ul li, .social-icons img {
+    color: #ecae20 !important;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-section {
+    flex: 1;
+    border-right: 1px solid white; /* Voeg een witte rand toe aan de rechterkant van elke sectie */
+}
+
+.footer-section ul {
+    list-style: none; /* Verwijder de standaard opsommingstekens */
+    padding: 0; /* Verwijder eventuele standaard padding */
+}
+
+.footer-section ul li {
+    margin-bottom: 10px; /* Voeg wat ruimte toe tussen de lijstitems */
+}
+
+.footer-section ul li a {
+    color: #ecae20;
+}
+
+
+.social-icons img {
+    width: 40px; /* Pas de breedte van de sociale mediapictogrammen aan */
+    height: auto; /* Hierdoor schaalt de hoogte automatisch met behoud van de aspectverhouding */
+    margin-right: 10px; /* Voeg wat ruimte toe tussen de afbeeldingen */
+}
+
+        
     `;
 
     @state()
@@ -213,9 +266,19 @@ export class Root extends LitElement {
             case RouterPage.Register:
                 contentTemplate = this.renderRegister();
                 break;
+            case RouterPage.AboutUs: // Nieuwe case voor About Us
+                contentTemplate = html`<aboutus-root></aboutus-root>`;
+                break;
+            case RouterPage.Shipping: // Nieuwe case voor shipping
+                contentTemplate = html`<shipping-root></shipping-root>`;
+                break;
+            case RouterPage.Returns: // Nieuwe case voor returns
+                contentTemplate = html`<returns-root></returns-root>`;
+                break;
             default:
                 contentTemplate = this.renderHome();
         }
+
 
         return html`
             <header>
@@ -235,6 +298,40 @@ export class Root extends LitElement {
             </header>
             <main>${contentTemplate}</main>
             <footer>Copyright &copy; Luca Stars 2024</footer>
+
+            
+
+            <!-- Hier komt de footercode -->
+            <footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+                <li>Adres: Amstelcampus, Wibautstraat 3b, 1091 GH Amsterdam</li>
+                <li>Telefoon: +31 6 12345678 </li>
+                <li>E-mail: info@lucastart.nl</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <ul>
+                <li><a href="/AboutUs">About us</a></li>
+                <li><a href="/shipping">Shipping</a></li>
+                <li><a href="/returns">Returns</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow us</h3>
+            <ul class="social-icons">
+                <li><a href="#"><img src="/assets/img/fb.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="/assets/img/insta.png" alt="Instagram"></a></li>
+                <li><a href="#"><img src="/assets/img/x.png" alt="Twitter"></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
         `;
     }
 
