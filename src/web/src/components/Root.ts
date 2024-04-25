@@ -32,6 +32,8 @@ footer {
         header {
             background-color: #fbfbfa;
             padding: 10px;
+            position: relative;
+            left: 50px;
         }
 
         main {
@@ -296,6 +298,16 @@ footer {
                     ${this.renderLogoutInNav()}
                 </nav>
             </header>
+            <body>
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <h1 style="font-size:50px">Promotion Banner</h1>
+                        <a href="">
+                            <button class="button button1">More information</button>
+                        </a>
+                    </div>
+                </div>
+            </body>
             <main>${contentTemplate}</main>
             <footer>Copyright &copy; Luca Stars 2024</footer>
 
