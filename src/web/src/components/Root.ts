@@ -69,9 +69,6 @@ footer {
             margin-bottom: 5px;
         }
         
-        /* h3 {
-            color: black !important;
-        } */
 
         .footer-section h3 {
     color: white !important;
@@ -324,14 +321,22 @@ footer {
                 <li>E-mail: info@lucastart.nl</li>
             </ul>
         </div>
+
         <div class="footer-section">
-            <h3>About Us</h3>
+            <h3>We are happy to help you</h3>
             <ul>
-                <li><a href="/AboutUs">About us</a></li>
                 <li><a href="/shipping">Shipping</a></li>
                 <li><a href="/returns">Returns</a></li>
             </ul>
         </div>
+
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <ul>
+                <li><a href="/AboutUs">About us</a></li>
+            </ul>
+        </div>
+
         <div class="footer-section">
             <h3>Follow us</h3>
             <ul class="social-icons">
