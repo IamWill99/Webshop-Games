@@ -42,4 +42,11 @@ export const orderItems: OrderItem[] = [
         price: 30,
         imageURLs: ["https://via.placeholder.com/150"],
     },
+    {
+        id: 4,
+        name: "Item 4",
+        description: "Description 4",
+        price: 40,
+        imageURLs: ["https://via.placeholder.com/150"],
+    },
 ];
