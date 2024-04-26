@@ -12,7 +12,7 @@
 
 
 
-#SMART-Methode over Gemotifeerd blijfen in blok 4 (laatste blok van het jaar !!!)#
+**SMART-Methode over Gemotifeerd blijfen in blok 4 (laatste blok van het jaar !!!)**
 
 **Specifiek:** Ik wil mijn motivatie behouden tijdens blok 4 van mijn studie software engineering, wat mijn laatste blok van het jaar is.
 
