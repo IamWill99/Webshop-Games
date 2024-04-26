@@ -28,7 +28,7 @@ De aanleiding en/of context van het thema/vraagstuk is:
 
 Binnen dit thema beperk ik mij tot het aspect:
 
-**De algemene lay-out van een webshop voor de gebruikerservaring.**
+**De visuele aspecten van een webshop voor de gebruikerservaring.**
 
 ## D. DOELSTELLING
 
@@ -47,7 +47,7 @@ Het voor mijn publiek interessante issue dat op het gebied van het afgebakende t
 
 De Hoofdvraag van mijn onderzoek is:
 
-**In hoeverre spelen visuele elementen zoals kleur, lay-out en afbeeldingen in het verbeteren van de gebruikerservaring van een webshop?**
+**Welke aanpassingen en optimalisatiestrategieën met betrekking tot visuele elementen zoals kleur, lay-out en afbeeldingen zijn effectief in het verbeteren van de gebruikerservaring van een webshop?**
 
 ## H. BEGRIPSOMSCHRIJVING
 
