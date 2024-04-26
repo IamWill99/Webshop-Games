@@ -1,3 +1,5 @@
+![Afbeelding Retro](Schermafbeelding_2024-04-26_132243.png)
+
 # Retro blok 4 sprint 1
 
 Op 26-04-2024 zijn als team bezig geweest met de retro. Hier hebben we besproken hoe we over het algemeen hebben gevoeld over het verloop van sprint 1. Hier hadden we de keuze uit:
