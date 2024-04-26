@@ -31,9 +31,7 @@ footer {
 
         header {
             background-color: #fbfbfa;
-            padding: 10px;
-            position: relative;
-            left: 50px;
+            padding-left: 60px;
         }
 
         main {
@@ -67,6 +65,33 @@ footer {
         .form label {
             display: block;
             margin-bottom: 5px;
+        }
+
+        .hero-text {
+            text-align: center;
+            color: black;
+            padding-top: 150px;
+          }
+        .hero-image{
+            background: lightgrey;
+            height: 500px;
+        }
+
+        .button1{
+            background-color: red;
+            color: white;
+            font-size: 15px;
+            border-radius: 50px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            border-style: solid;
+            border-color: red;
+        }
+ 
+        .order-items{
+            display: flex;
+            justify-content: space-between;
         }
         
 
