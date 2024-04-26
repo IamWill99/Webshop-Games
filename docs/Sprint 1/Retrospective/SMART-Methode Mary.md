@@ -1,4 +1,4 @@
-#SMART-Methode over Lit#
+**SMART-Methode over Lit**
 
 Specifiek: Ik wil mijn begrip en vaardigheden met betrekking tot "lit components" verbeteren, inclusief het begrijpen van hun structuur, functionaliteiten en toepassingen.
 
@@ -12,7 +12,7 @@ Tijdsgebonden: Ik stel mezelf een tijdlijn van twee maand (Het eind van blok 4) 
 
 
 
-SMART-Methode over Gemotifeerd blijfen in blok 4 (laatste blok van het jaar !!!)
+**SMART-Methode over Gemotifeerd blijfen in blok 4 (laatste blok van het jaar !!!)**
 
 Specifiek: Ik wil mijn motivatie behouden tijdens blok 4 van mijn studie software engineering, wat mijn laatste blok van het jaar is.
 
