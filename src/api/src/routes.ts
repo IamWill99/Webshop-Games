@@ -17,6 +17,22 @@ router.post("/users/login", (req, res) => userController.login(req, res));
 
 router.get("/orderItems", orderItemController.getAll);
 
+// New route for"About Us"-page
+router.get("/AboutUs-root", (_, res) => {
+    res.send("Welcome to our webshop! Learn more about us here.");
+});
+
+// New route for "shipping"-page
+router.get("/shipping-root", (_, res) => {
+    res.send("Welcome to our webshop! Learn more about our shipping.");
+});
+
+// New route for "returns"-page
+router.get("/returns-root", (_, res) => {
+    res.send("Welcome to our webshop! Learn more about our returns.");
+});
+
+
 // NOTE: Everything after this point only works with a valid JWT token!
 router.use(handleTokenBasedAuthentication);
 
