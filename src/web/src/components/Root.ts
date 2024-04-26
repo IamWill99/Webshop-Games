@@ -280,6 +280,11 @@ footer {
 
 
         return html`
+        <head> 
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        </head>
             <header>
                 <nav>
                     <div
@@ -295,16 +300,6 @@ footer {
                     ${this.renderLogoutInNav()}
                 </nav>
             </header>
-            <body>
-                <div class="hero-image">
-                    <div class="hero-text">
-                        <h1 style="font-size:50px">Promotion Banner</h1>
-                        <a href="">
-                            <button class="button button1">More information</button>
-                        </a>
-                    </div>
-                </div>
-            </body>
             <main>${contentTemplate}</main>
             <footer>Copyright &copy; Luca Stars 2024</footer>
 
@@ -363,8 +358,15 @@ footer {
         }
 
         return html`
+        <body>
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1 style="font-size:50px">Promotion Banner</h1>
+                    <a href=""><button class="button button1">More information</button></a>
+                </div>
+            </div> 
+        </body>
             <h1>Welkom op de Luca Stars webshop!</h1>
-
             ${this._isLoggedIn
                 ? nothing
                 : html`<p>Je moet ingelogd zijn om producten aan je winkelmandje toe te kunnen voegen!</p>`}
