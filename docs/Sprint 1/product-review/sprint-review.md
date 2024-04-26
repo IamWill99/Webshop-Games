@@ -1,5 +1,7 @@
 # Product review feedback Sprint 1
-Op 26-04-2024 hebben wij als groep een presentatie gegeven om ons product te laten reviewen. Hier hebben wij op enkele punten feedback gekregen:
+**Op 26-04-2024 hebben wij als groep een presentatie gegeven om ons product te laten reviewen.
+
+Hier hebben wij op enkele punten feedback gekregen:**
 
 Het is verstanding om weights moeten gaan gebruiken in onze user story's, zodat we weten wat onze belastbaarheid is en hoeveel prioriteit we geven aan de Stories.
 
@@ -9,7 +11,9 @@ Daarna werd er ook nog gezegd dat we de requirements van de product owner goed h
 
 We hebben ook te horen gekregen dat we wel wat harder door moeten werken en dat we meer uren gaan moeten steken in het programmeren. 
 
-#Na onze presentatie op 26-04-2024 hebben we gepraat over de feedback die we kregen. Hier zijn de dingen die we gaan doen:
+**Na onze presentatie op 26-04-2024 hebben we gesproken over de feedback die we kregen.
+
+Hier zijn de dingen die we gaan doen:**
 
 **Gewichten gebruiken voor onze taken:** We gaan nadenken over hoe belangrijk elke taak is en dat vastleggen met gewichten. Zo weten we beter wat we eerst moeten doen.
 
