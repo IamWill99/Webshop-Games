@@ -1,6 +1,6 @@
 **SMART-Methode over Lit**
 
-Specifiek: Ik wil mijn begrip en vaardigheden met betrekking tot "lit components" verbeteren, inclusief het begrijpen van hun structuur, functionaliteiten en toepassingen.
+**Specifiek:** Ik wil mijn begrip en vaardigheden met betrekking tot "lit components" verbeteren, inclusief het begrijpen van hun structuur, functionaliteiten en toepassingen.
 
 Meetbaar: Ik zal mijn voortgang meten door regelmatig te reflecteren op mijn begrip van "lit components" en door mijn vermogen om ze effectief toe te passen in projecten te evalueren.
 
