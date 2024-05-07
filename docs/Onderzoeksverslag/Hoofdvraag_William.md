@@ -41,7 +41,7 @@ Het onderzoek levert het volgende op (bijv. kennis die er nu nog niet is in de v
 
 Het voor mijn publiek interessante issue dat op het gebied van het afgebakende thema speelt is:
 
-**De impact van manipulatieve visuele elementen op de gebruikerservaring van webshops en de ethische implicaties daarvan. Dit verwijst naar het gebruik van visuele elementen zoals kleur, lay-out en afbeeldingen met als doel de gebruiker te beïnvloeden en mogelijk te manipuleren om bepaalde acties te ondernemen, zoals het doen van impulsaankopen of het delen van persoonlijke gegevens.**
+**De impact van manipulatieve visuele elementen op de gebruikerservaring van webshops en de ethische implicaties daarvan. Dit verwijst naar het gebruik van visuele elementen met als doel de gebruiker te beïnvloeden en mogelijk te manipuleren om bepaalde acties te ondernemen, zoals het doen van impulsaankopen of het delen van persoonlijke gegevens.**
 
 ## G. VRAAGSTELLING 1*
 
