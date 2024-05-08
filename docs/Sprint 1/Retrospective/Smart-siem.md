@@ -1,0 +1,2 @@
+Smart
+Ik wil voor de volgende sprint van drie weken een overzichtelijke planning maken door minstens één uur op de eerste dag van de nieuwe sprint samen met mijn team eraan te besteden, zodat we het werk efficiënt kunnen verdelen en stress aan het einde van het blok kunnen verminderen.
