@@ -134,6 +134,44 @@ export class Root extends LitElement {
             height: auto; /* Hierdoor schaalt de hoogte automatisch met behoud van de aspectverhouding */
             margin-right: 10px; /* Voeg wat ruimte toe tussen de afbeeldingen */
         }
+
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px;
+            justify-content: space-evenly;
+        }
+        .game {
+            flex: 0 0 auto;
+            width: 300px; /* Breedte van elk item aanpassen */
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .game img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .game h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .game p {
+            font-size: 14px;
+            color: #666;
+        }
+        .game:hover {
+            cursor: pointer; /* Cursorstijl veranderen naar wijzende hand wanneer de gebruiker eroverheen gaat */
+        }
     `;
 
     @state()
@@ -391,6 +429,32 @@ export class Root extends LitElement {
                     <div class="hero-text">
                         <h1 style="font-size:50px">Promotion Banner</h1>
                         <a href=""><button class="button button1">More information</button></a>
+                    </div>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel">
+                    <!-- Voeg hier de games toe -->
+                        <div class="game" onclick="window.location.href = 'https://goozoovooguu46-pb3b2324.hbo-ict.cloud/'">
+                            <img src="https://lucastars.hbo-ict.cloud/media/7da176806505408c88b0d5f16f000a7b/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
+                            <h3>Lost Memories: Quest of the Forgotten Knight</h3>
+                            <p>In a realm of magic and mystery, an unnamed protagonist sets out on a quest to find the lost damsel, aided by strange artifacts and unexpected allies. Through forests, caves, and cliffs, he uncovers fragments of his forgotten memories.</p>
+                        </div>
+                        <!-- Voeg hier de andere games toe -->
+                        <div class="game" onclick="window.location.href = 'https://gooriixuutuu25-pb3a2324.hbo-ict.cloud/'">
+                            <img src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt=""The dragon-Slayer 3000"">
+                            <h3>The dragon-Slayer 3000</h3>
+                            <p>Bij deze game ga je met een van de drie characters op pad met je party om de draak te verslaan.\nKun jij het gevaar aan?</p>
+                        </div>
+                        <div class="game" onclick="window.location.href = 'https://huucuucaacoo61-pb3a2324.hbo-ict.cloud/'">
+                            <img src="https://lucastars.hbo-ict.cloud/media/f517798d34f14abcb65bee7386ef38dd/00000006000000000000000000000000.png" alt="Metro 8">
+                            <h3>Metro 8</h3>
+                            <p>In dit spel bevind je je in een spannende wereld van ondergrondse tunnels en metrostations. Gewapend met slechts je eigen verstand en doorzettingsvermogen, moet je navigeren door een uitgestrekt metronetwerk. Het spel is een doolhof, met verborgen paden, puzzels en obstakels die je moet overwinnen om verder te komen. Terwijl je dieper de duistere gangen verkent, ontdek je geheimen en uitdagingen die je vaardigheden op de proef stellen. Durf jij de weg te vinden en te ontsnappen uit dit ondergrondse labyrint?</p>
+                        </div>
+                        <div class="game" onclick="window.location.href = 'https://muufuugeecaa69-pb3b2324.hbo-ict.cloud/'">
+                            <img src="https://lucastars.hbo-ict.cloud/media/2626cba298e74c869dfabb1fe9f778b3/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
+                            <h3>Save The Future</h3>
+                            <p>Are you able to save the future of mankind?\n\nIf you like science, logical thinking and wine you should give it a go...</p>
+                        </div>
                     </div>
                 </div>
             </body>
