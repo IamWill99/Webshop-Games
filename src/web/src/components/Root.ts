@@ -13,7 +13,7 @@ enum RouterPage {
     Register = "register",
     AboutUs = "AboutUs", // New route for About Us
     Shipping = "shipping",
-    Returns = "Returns",  // New route for returns
+    Returns = "Returns", // New route for returns
 }
 
 /**
@@ -24,10 +24,9 @@ enum RouterPage {
 @customElement("webshop-root")
 export class Root extends LitElement {
     public static styles = css`
-
-footer {
-        color: #ecae20;
-    }
+        footer {
+            color: #ecae20;
+        }
 
         header {
             background-color: #fbfbfa;
@@ -39,7 +38,7 @@ footer {
         }
 
         footer {
-            background-color: rgb(18,26,132);
+            background-color: rgb(18, 26, 132);
             padding: 10px;
             text-align: center;
         }
@@ -71,13 +70,13 @@ footer {
             text-align: center;
             color: black;
             padding-top: 150px;
-          }
-        .hero-image{
+        }
+        .hero-image {
             background: lightgrey;
             height: 500px;
         }
 
-        .button1{
+        .button1 {
             background-color: red;
             color: white;
             font-size: 15px;
@@ -88,53 +87,91 @@ footer {
             border-style: solid;
             border-color: red;
         }
- 
-        .order-items{
+
+        .order-items {
             display: flex;
             justify-content: space-between;
         }
-        
 
         .footer-section h3 {
-    color: white !important;
-}
+            color: white !important;
+        }
 
-.footer-section, .footer-section p, .footer-section ul, .footer-section ul li, .social-icons img {
-    color: #ecae20 !important;
-}
+        .footer-section,
+        .footer-section p,
+        .footer-section ul,
+        .footer-section ul li,
+        .social-icons img {
+            color: #ecae20 !important;
+        }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.footer-section {
-    flex: 1;
-    border-right: 1px solid white; /* Voeg een witte rand toe aan de rechterkant van elke sectie */
-}
+        .footer-section {
+            flex: 1;
+            border-right: 1px solid white; /* Voeg een witte rand toe aan de rechterkant van elke sectie */
+        }
 
-.footer-section ul {
-    list-style: none; /* Verwijder de standaard opsommingstekens */
-    padding: 0; /* Verwijder eventuele standaard padding */
-}
+        .footer-section ul {
+            list-style: none; /* Verwijder de standaard opsommingstekens */
+            padding: 0; /* Verwijder eventuele standaard padding */
+        }
 
-.footer-section ul li {
-    margin-bottom: 10px; /* Voeg wat ruimte toe tussen de lijstitems */
-}
+        .footer-section ul li {
+            margin-bottom: 10px; /* Voeg wat ruimte toe tussen de lijstitems */
+        }
 
-.footer-section ul li a {
-    color: #ecae20;
-}
+        .footer-section ul li a {
+            color: #ecae20;
+        }
 
+        .social-icons img {
+            width: 40px; /* Pas de breedte van de sociale mediapictogrammen aan */
+            height: auto; /* Hierdoor schaalt de hoogte automatisch met behoud van de aspectverhouding */
+            margin-right: 10px; /* Voeg wat ruimte toe tussen de afbeeldingen */
+        }
 
-.social-icons img {
-    width: 40px; /* Pas de breedte van de sociale mediapictogrammen aan */
-    height: auto; /* Hierdoor schaalt de hoogte automatisch met behoud van de aspectverhouding */
-    margin-right: 10px; /* Voeg wat ruimte toe tussen de afbeeldingen */
-}
-
-        
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px;
+            justify-content: space-evenly;
+        }
+        .game {
+            flex: 0 0 auto;
+            width: 300px; /* Breedte van elk item aanpassen */
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .game img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .game h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .game p {
+            font-size: 14px;
+            color: #666;
+        }
+        .game:hover {
+            cursor: pointer; /* Cursorstijl veranderen naar wijzende hand wanneer de gebruiker eroverheen gaat */
+        }
     `;
 
     @state()
@@ -303,13 +340,15 @@ footer {
                 contentTemplate = this.renderHome();
         }
 
-
         return html`
-        <head> 
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-            <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        </head>
+            <head>
+                <link
+                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+                    rel="stylesheet"
+                />
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+            </head>
             <header>
                 <nav>
                     <div
@@ -328,47 +367,49 @@ footer {
             <main>${contentTemplate}</main>
             <footer>Copyright &copy; Luca Stars 2024</footer>
 
-            
-
             <!-- Hier komt de footercode -->
             <footer>
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>Contact</h3>
-            <ul>
-                <li>Adres: Amstelcampus, Wibautstraat 3b, 1091 GH Amsterdam</li>
-                <li>Telefoon: +31 6 12345678 </li>
-                <li>E-mail: info@lucastart.nl</li>
-            </ul>
-        </div>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li>Adres: Amstelcampus, Wibautstraat 3b, 1091 GH Amsterdam</li>
+                            <li>Telefoon: +31 6 12345678</li>
+                            <li>E-mail: info@lucastart.nl</li>
+                        </ul>
+                    </div>
 
-        <div class="footer-section">
-            <h3>We are happy to help you</h3>
-            <ul>
-                <li><a href="/shipping">Shipping</a></li>
-                <li><a href="/returns">Returns</a></li>
-            </ul>
-        </div>
+                    <div class="footer-section">
+                        <h3>We are happy to help you</h3>
+                        <ul>
+                            <li><a href="/shipping">Shipping</a></li>
+                            <li><a href="/returns">Returns</a></li>
+                        </ul>
+                    </div>
 
-        <div class="footer-section">
-            <h3>About Us</h3>
-            <ul>
-                <li><a href="/AboutUs">About us</a></li>
-            </ul>
-        </div>
+                    <div class="footer-section">
+                        <h3>About Us</h3>
+                        <ul>
+                            <li><a href="/AboutUs">About us</a></li>
+                        </ul>
+                    </div>
 
-        <div class="footer-section">
-            <h3>Follow us</h3>
-            <ul class="social-icons">
-                <li><a href="#"><img src="/assets/img/fb.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="/assets/img/insta.png" alt="Instagram"></a></li>
-                <li><a href="#"><img src="/assets/img/x.png" alt="Twitter"></a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-
+                    <div class="footer-section">
+                        <h3>Follow us</h3>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#"><img src="/assets/img/fb.png" alt="Facebook" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="/assets/img/insta.png" alt="Instagram" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="/assets/img/x.png" alt="Twitter" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
         `;
     }
 
@@ -383,14 +424,40 @@ footer {
         }
 
         return html`
-        <body>
-            <div class="hero-image">
-                <div class="hero-text">
-                    <h1 style="font-size:50px">Promotion Banner</h1>
-                    <a href=""><button class="button button1">More information</button></a>
+            <body>
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <h1 style="font-size:50px">Promotion Banner</h1>
+                        <a href=""><button class="button button1">More information</button></a>
+                    </div>
                 </div>
-            </div> 
-        </body>
+                <div class="carousel-container">
+                    <div class="carousel">
+                    <!-- Voeg hier de games toe -->
+                        <div class="game" onclick="window.location.href = 'https://goozoovooguu46-pb3b2324.hbo-ict.cloud/'">
+                            <img src="https://lucastars.hbo-ict.cloud/media/7da176806505408c88b0d5f16f000a7b/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
+                            <h3>Lost Memories: Quest of the Forgotten Knight</h3>
+                            <p>In a realm of magic and mystery, an unnamed protagonist sets out on a quest to find the lost damsel, aided by strange artifacts and unexpected allies. Through forests, caves, and cliffs, he uncovers fragments of his forgotten memories.</p>
+                        </div>
+                        <!-- Voeg hier de andere games toe -->
+                        <div class="game" onclick="window.location.href = 'https://gooriixuutuu25-pb3a2324.hbo-ict.cloud/'">
+                            <img src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt=""The dragon-Slayer 3000"">
+                            <h3>The dragon-Slayer 3000</h3>
+                            <p>Bij deze game ga je met een van de drie characters op pad met je party om de draak te verslaan.\nKun jij het gevaar aan?</p>
+                        </div>
+                        <div class="game" onclick="window.location.href = 'https://huucuucaacoo61-pb3a2324.hbo-ict.cloud/'">
+                            <img src="https://lucastars.hbo-ict.cloud/media/f517798d34f14abcb65bee7386ef38dd/00000006000000000000000000000000.png" alt="Metro 8">
+                            <h3>Metro 8</h3>
+                            <p>In dit spel bevind je je in een spannende wereld van ondergrondse tunnels en metrostations. Gewapend met slechts je eigen verstand en doorzettingsvermogen, moet je navigeren door een uitgestrekt metronetwerk. Het spel is een doolhof, met verborgen paden, puzzels en obstakels die je moet overwinnen om verder te komen. Terwijl je dieper de duistere gangen verkent, ontdek je geheimen en uitdagingen die je vaardigheden op de proef stellen. Durf jij de weg te vinden en te ontsnappen uit dit ondergrondse labyrint?</p>
+                        </div>
+                        <div class="game" onclick="window.location.href = 'https://muufuugeecaa69-pb3b2324.hbo-ict.cloud/'">
+                            <img src="https://lucastars.hbo-ict.cloud/media/2626cba298e74c869dfabb1fe9f778b3/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
+                            <h3>Save The Future</h3>
+                            <p>Are you able to save the future of mankind?\n\nIf you like science, logical thinking and wine you should give it a go...</p>
+                        </div>
+                    </div>
+                </div>
+            </body>
             <h1>Welkom op de Luca Stars webshop!</h1>
             ${this._isLoggedIn
                 ? nothing

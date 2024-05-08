@@ -22,32 +22,32 @@ Het thema/vraagstuk van het onderzoek is:
 
 De aanleiding en/of context van het thema/vraagstuk is:
 
-**In de digitale landschap van vandaag neemt e-commerce een steeds prominentere plaats in, waarbij consumenten steeds vaker online winkelen voor een breed selectie aan producten en diensten. In dit snel evoluerende landschap is de gebruikerservaring van een webshop van cruciaal belang voor het aantrekken en behouden van klanten. Visuele elementen zoals kleur, lay-out en afbeeldingen spelen een essentiële rol bij het vormgeven van deze gebruikerservaring, aangezien ze direct van invloed zijn op hoe gebruikers een webshop waarnemen, navigeren en uiteindelijk beslissingen nemen over aankopen.**
+**In de digitale landschap van vandaag neemt e-commerce een steeds prominentere plaats in, waarbij consumenten steeds vaker online winkelen voor een breed selectie aan producten en diensten. In dit snel evoluerende landschap is de gebruikerservaring van een webshop van cruciaal belang voor het aantrekken en behouden van klanten. Visuele elementen, die in dit onderzoek worden gedefinieerd als kleur, lay-out en afbeeldingen, spelen een essentiële rol bij het vormgeven van deze gebruikerservaring, aangezien ze direct van invloed zijn op hoe gebruikers een webshop waarnemen, navigeren en uiteindelijk beslissingen nemen over aankopen.**
 
 ## C. AFBAKENING
 
 Binnen dit thema beperk ik mij tot het aspect:
 
-**De algemene lay-out van een webshop voor de gebruikerservaring.**
+**De Kleur, afbeeldingen en lay-out van een webshop voor de winkelervaring van een consument.**
 
 ## D. DOELSTELLING
 
 Het onderzoek levert het volgende op (bijv. kennis die er nu nog niet is in de vorm van een voorstel/ontwerp, of een diagnose van het probleem):
 
-**De doelstelling van dit onderzoek is om de specifieke impact van visuele elementen zoals kleur, lay-out en afbeeldingen op de gebruikerservaring van een webshop te identificeren, en om aanbevelingen te formuleren voor het optimaliseren van deze elementen om de gebruikerservaring te verbeteren.**
+**De doelstelling van dit onderzoek is om de specifieke impact van visuele elementen, die in dit onderzoek worden gedefinieerd als kleur, lay-out en afbeeldingen, op de winkelervaring van een webshop te identificeren, en om aanbevelingen te formuleren voor het optimaliseren van deze elementen om de winkelervaring te verbeteren.**
 
 
 ## E. ETHISCH/MAATSCHAPPELIJK ISSUE
 
 Het voor mijn publiek interessante issue dat op het gebied van het afgebakende thema speelt is:
 
-**De impact van manipulatieve visuele elementen op de gebruikerservaring van webshops en de ethische implicaties daarvan. Dit verwijst naar het gebruik van visuele elementen zoals kleur, lay-out en afbeeldingen met als doel de gebruiker te beïnvloeden en mogelijk te manipuleren om bepaalde acties te ondernemen, zoals het doen van impulsaankopen of het delen van persoonlijke gegevens.**
+**De impact van manipulatieve visuele elementen op de gebruikerservaring van webshops en de ethische implicaties daarvan. Dit verwijst naar het gebruik van visuele elementen met als doel de gebruiker te beïnvloeden en mogelijk te manipuleren om bepaalde acties te ondernemen, zoals het doen van impulsaankopen of het delen van persoonlijke gegevens.**
 
 ## G. VRAAGSTELLING 1*
 
 De Hoofdvraag van mijn onderzoek is:
 
-**In hoeverre spelen visuele elementen zoals kleur, lay-out en afbeeldingen in het verbeteren van de gebruikerservaring van een webshop?**
+**Welke optimalisatiestrategieën met betrekking tot visuele elementen zoals kleur, lay-out en afbeeldingen zijn effectief in het verbeteren van de winkelervaring op een webshop?**
 
 ## H. BEGRIPSOMSCHRIJVING
 
