@@ -2,7 +2,7 @@
 
 Ethiek in de ICT-wereld verwijst naar de principes en normen die bepalen wat als juist en onjuist wordt beschouwd bij het gebruik van informatie- en communicatietechnologieën (ICT). Het gaat om het nadenken over en handelen naar morele waarden bij het ontwikkelen, implementeren en gebruiken van technologie. Dit omvat een breed scala aan onderwerpen, waaronder privacy, veiligheid, eigendomsrechten, professionele gedragscodes, en de sociale en milieu-impact van technologie.
 
-Hier zijn enkele kernaspecten van ethiek in de ICT-wereld:
+**Hier zijn enkele kernaspecten van ethiek in de ICT-wereld:**
 
 Privacy
 
