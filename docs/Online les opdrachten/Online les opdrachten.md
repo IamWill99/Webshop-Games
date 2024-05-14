@@ -4,9 +4,7 @@ Ethiek in de ICT-wereld verwijst naar de principes en normen die bepalen wat als
 
 **Hier zijn enkele kernaspecten van ethiek in de ICT-wereld:**
 
-Privacy
-
-Bescherming van persoonlijke gegevens: Het is essentieel om de persoonlijke gegevens van individuen te beschermen tegen ongeautoriseerde toegang en misbruik.
+**Privacy:** Bescherming van persoonlijke gegevens: Het is essentieel om de persoonlijke gegevens van individuen te beschermen tegen ongeautoriseerde toegang en misbruik.
 Surveillance: De ethische implicaties van toezicht door overheden en bedrijven moeten worden overwogen, inclusief de balans tussen veiligheid en privacy.
 Beveiliging
 
