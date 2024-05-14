@@ -1,4 +1,4 @@
-
+![Afbeelding Ethiek Mindmap](Ethiek mindmap.png)
 
 **Wat is Ethiek in de ICT-wereld?**
 
