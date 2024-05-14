@@ -1,5 +1,5 @@
 
-![Afbeelding Ethiek Mindmap](Ethiek in de ICT- wereld.jpg)
+![Afbeelding Ethiek Mindmap](Schermafbeelding 2024-05-14 142340.png)
 
 **Wat is Ethiek in de ICT-wereld?**
 
