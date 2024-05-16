@@ -14,6 +14,7 @@ enum RouterPage {
     AboutUs = "AboutUs", // New route for About Us
     Shipping = "shipping",
     Returns = "Returns", // New route for returns
+    product = "product", // New route for returns
 }
 
 /**
@@ -336,6 +337,9 @@ export class Root extends LitElement {
             case RouterPage.Returns: // Nieuwe case voor returns
                 contentTemplate = html`<returns-root></returns-root>`;
                 break;
+            case RouterPage.product: // Nieuwe case voor product
+                contentTemplate = html`<product-root></product-root>`;
+                break;
             default:
                 contentTemplate = this.renderHome();
         }
@@ -441,7 +445,7 @@ export class Root extends LitElement {
                         </div>
                         <!-- Voeg hier de andere games toe -->
                         <div class="game" onclick="window.location.href = 'https://gooriixuutuu25-pb3a2324.hbo-ict.cloud/'">
-                            <img src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt=""The dragon-Slayer 3000"">
+                            <img src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt="The dragon-Slayer 3000">
                             <h3>The dragon-Slayer 3000</h3>
                             <p>Bij deze game ga je met een van de drie characters op pad met je party om de draak te verslaan.\nKun jij het gevaar aan?</p>
                         </div>
