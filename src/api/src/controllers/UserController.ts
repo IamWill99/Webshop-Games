@@ -114,7 +114,9 @@ export class UserController {
      * @param req Request object
      * @param res Response object
      */
+
     public hello(req: Request, res: Response): void {
+        console.log("hallo");
         const userData: UserData = req.user!;
 
         const cartItemNames: string[] | undefined = userData.cart?.map(
