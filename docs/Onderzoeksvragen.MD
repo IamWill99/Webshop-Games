@@ -46,7 +46,7 @@ Het evenwicht tussen gebruiksgemak en privacybescherming bij het verzamelen van 
 
 **De Hoofdvraag van mijn onderzoek is:**
 
-Wat zijn de effecten van verschillende methoden van cookie-toestemming op de gebruikerservaring, privacyperceptie en naleving van webshops?
+Hoe beïnvloeden verschillende methoden van cookie-toestemming met betrekking tot strikt noodzakelijke cookies de gebruikerservaring, privacy perceptie en naleving van webshops?
 
 
 ## H. BEGRIPSOMSCHRIJVING
@@ -64,16 +64,16 @@ Privacyperceptie: De perceptie van gebruikers over hoe hun privacy wordt gewaarb
 
 **De deelvragen van mijn onderzoek zijn:**
 
-*- Welke verschillende methoden van cookie-toestemming worden momenteel gebruikt door webshops?*
+*- Welke verschillende methoden van cookie-toestemming worden momenteel gebruikt door webshops, met betrekking tot strikt noodzakelijke cookies?*
 
-*- Hoe ervaren gebruikers de verschillende methoden van cookie-toestemming tijdens het browsen op webshops?*
+*- Hoe ervaren gebruikers de verschillende methoden van cookie-toestemming, met een focus op strikt noodzakelijke cookies, tijdens het browsen op webshops?*
 
-*- In hoeverre beïnvloeden verschillende methoden van cookie-toestemming de perceptie van privacy bij gebruikers?*
+*- In hoeverre beïnvloeden verschillende methoden van cookietoestemming, met nadruk op strikt noodzakelijke cookies, de perceptie van privacy bij gebruikers?*
 
-*- Wat zijn de juridische vereisten en richtlijnen met betrekking tot cookie-toestemming voor webshops?*
+*- Wat zijn de juridische vereisten en richtlijnen met betrekking tot cookie-toestemming voor webshops, met specifieke aandacht voor strikt noodzakelijke cookies?*
 
-*- Hoe effectief zijn verschillende methoden van cookie-toestemming in het verkrijgen van daadwerkelijke toestemming van gebruikers?*
+*- Hoe effectief zijn verschillende methoden van cookie-toestemming in het verkrijgen van daadwerkelijke toestemming van gebruikers, vooral met betrekking tot strikt noodzakelijke cookies?*
 
-*- Wat zijn de mogelijke gevolgen van het niet naleven van cookie-toestemmingsregels voor webshops?*
+*- Hoe reageren gebruikers op de informatie en uitleg die wordt gegeven over strikt noodzakelijke cookies bij verschillende methoden van cookie-toestemming?*
 
-*- Welke best practices kunnen worden aanbevolen voor webshops om een optimale balans te vinden tussen gebruiksgemak, privacybescherming en wettelijke naleving?* 
+*- Hoe goed begrijpen gebruikers wat strikt noodzakelijk cookies zijn bij verschillende toestemming methoden?* 
