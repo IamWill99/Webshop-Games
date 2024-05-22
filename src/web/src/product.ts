@@ -228,11 +228,9 @@ footer {
     }
 }
 
-
        
 
     `;
-
 
     protected render(): TemplateResult {
         return html`
@@ -522,4 +520,5 @@ footer {
     
     
 }
+
 

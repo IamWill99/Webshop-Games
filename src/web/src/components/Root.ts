@@ -475,7 +475,8 @@ export class Root extends LitElement {
       }
     
       #carousel {
-        width: 600px;
+        display: flex;
+        width: 800px;
         height: 400px;
         user-select: none;
       }
@@ -484,7 +485,7 @@ export class Root extends LitElement {
         display: none;
       }
     </style>
-                    <h2>motion-carousel</h2>
+                    <h2>featured games</h2>
 
 <motion-carousel id="carousel">
 
@@ -492,22 +493,23 @@ export class Root extends LitElement {
         
                                 <img src="https://lucastars.hbo-ict.cloud/media/7da176806505408c88b0d5f16f000a7b/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
                                 <h3>Lost Memories: Quest of the Forgotten Knight</h3>
+                                <li><a href="product.html">Product page</a></li>
                             </div>
                             <div class="game">
                                 <img src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt="The dragon-Slayer 3000">
                                 <h3>The dragon-Slayer 3000</h3>
-                                <p>Bij deze game ga je met een van de drie characters op pad met je party om de draak te verslaan.\nKun jij het gevaar aan?</p>
+                                <li><a href="product.html">Product page</a></li>
                             </div>
                             <div class="game">
                                 <img src="https://lucastars.hbo-ict.cloud/media/f517798d34f14abcb65bee7386ef38dd/00000006000000000000000000000000.png" alt="Metro 8">
                                 <h3>Metro 8</h3>
-                                <p>In dit spel bevind je je in een spannende wereld van ondergrondse tunnels en metrostations. Gewapend met slechts je eigen verstand en doorzettingsvermogen, moet je navigeren door een uitgestrekt metronetwerk. Het spel is een doolhof, met verborgen paden, puzzels en obstakels die je moet overwinnen om verder te komen. Terwijl je dieper de duistere gangen verkent, ontdek je geheimen en uitdagingen die je vaardigheden op de proef stellen. Durf jij de weg te vinden en te ontsnappen uit dit ondergrondse labyrint?</p>
+                                <li><a href="product.html">Product page</a></li>
                             </div>
                             <div class="game">
                                 <img src="https://lucastars.hbo-ict.cloud/media/2626cba298e74c869dfabb1fe9f778b3/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
                                 <h3>Save The Future</h3>
-                                <p>Are you able to save the future of mankind?\n\nIf you like science, logical thinking and wine you should give it a go...</p>
-                            </div>
+                                <li><a href="product.html">Product page</a></li>
+                            </div>  
  </motion-carousel>
 
                 </body>
@@ -717,7 +719,7 @@ const styles: ReturnType<typeof css> = css`
         overflow: hidden;
         position: relative;
         /* Defaults */
-        width: 200px;
+        width: 300px;
         height: 200px;
         border-radius: 4px;
         background: gainsboro;
@@ -743,13 +745,14 @@ const styles: ReturnType<typeof css> = css`
 
     .bar {
         position: absolute;
-        bottom: 8px;
+        bottom: 25px;
         width: calc(100% - 16px);
         left: 8px;
-        height: 8px;
+        height: 20px;
         background: rgba(200, 200, 200, 0.5);
         border-radius: 8px;
         pointer-events: none;
+
     }
 
     .indicator {
@@ -758,7 +761,7 @@ const styles: ReturnType<typeof css> = css`
         height: 100%;
         width: 8px;
         border-radius: 8px;
-        background: #eee;
+        background: rgb(18, 26, 132);
     }
     `;
 
