@@ -31,5 +31,11 @@
         "tsx": "4.7.0",
         "typescript": "5.3.3",
         "typedoc": "0.25.13"
-    }
+
+    },
+
+    "dependencies": {
+        "@lit-labs/motion": "^1.0.7"
+      }
 }
+
