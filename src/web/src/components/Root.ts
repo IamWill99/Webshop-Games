@@ -402,13 +402,13 @@ export class Root extends LitElement {
                         <h3>Follow us</h3>
                         <ul class="social-icons">
                             <li>
-                                <a href="#"><img src="/assets/img/fb.png" alt="Facebook" /></a>
+                                <a href="https://www.facebook.com/"><img src="/assets/img/fb.png" alt="Facebook" /></a>
                             </li>
                             <li>
-                                <a href="#"><img src="/assets/img/insta.png" alt="Instagram" /></a>
+                                <a href="https://www.instagram.com/"><img src="/assets/img/insta.png" alt="Instagram" /></a>
                             </li>
                             <li>
-                                <a href="#"><img src="/assets/img/x.png" alt="Twitter" /></a>
+                                <a href="https://www.twitter.com/"><img src="/assets/img/x.png" alt="Twitter" /></a>
                             </li>
                         </ul>
                     </div>

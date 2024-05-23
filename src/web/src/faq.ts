@@ -1,7 +1,7 @@
 import { LitElement, html, css, TemplateResult, CSSResult } from "lit";
 import { customElement } from "lit/decorators.js";
 
-@customElement("contact-root")
+@customElement("faq-root")
 export class AboutUs extends LitElement {
     public static styles: CSSResult = css`
         /* Voeg hier je CSS-stijlen toe voor de "About Us"-pagina */
@@ -116,12 +116,11 @@ export class AboutUs extends LitElement {
                 padding: 8px 16px;
             }
 
+
             .web-image {
                 width: 100%;
                 margin-left: 0; /* Reset de marge voor mobiele weergave */
             }
-
-
         }
 
         @keyframes fadeInUp {
@@ -152,42 +151,32 @@ export class AboutUs extends LitElement {
     // Voeg de toegankelijkheidsmodifier 'protected' toe aan de render methode
     protected render(): TemplateResult {
         return html`
-            
-
             <div class="web">
                 <div class="heading">
-                    <h2>Contact</h2>
+                    <h2>FAQ</h2>
                 </div>
                 
                 <div class="container">
                     <div class="web content">
-                        <h2>Here is how to contact us:</h2>
+                        <h2>Our most frequently asked questions:</h2>
+                        <h1>1. What payment methods do you accept?</h1>
                         <p>
-                        E-mail: info@lucastart.nl
+                        We currently accept payments via credit card (Visa, Mastercard, American Express), PayPal, iDEAL and bank transfer.
                         </p>
                         
+                        <h1>2. What are the shipping costs and how long does it take for my order to arrive?</h1>
                         <p>
-                        Adress: Amstelcampus, Wibautstraat 3b, 1091 GH Amsterdam    
+                        Shipping costs vary depending on your location and the size of your order. Shipping costs will be clearly displayed during checkout. We aim to ship orders within a week after receiving payment. However, delivery times may vary depending on your location.
                         </p>
-
+                        <h1>3. Can I cancel or modify my order after placing it?</h1>
                         <p>
-                        Phone: +31 6 12345678
-                         </p>
+                        Once an order has been placed and processed, it cannot be canceled or modified. However, please contact us as soon as possible if you need assistance canceling or modifying an order, and we will do our best to assist you. </p>
 
-                            
-                            <h4><p style="text-align: left; margin-top: 20px;">We are, of course, also available on the following platforms:</p></h4>
+                        <h1>4. How can I contact your customer service?</h1> 
+                        <p>For questions, comments, or assistance, you can contact us via info@lucastart.nl or by phone at +31 6 12345678. Our customer service team is ready to assist you!</p>   
+                            <h4><p style="text-align: left; margin-top: 20px;">For more contact information, visit the homepage or our contact page.</p></h4>
                       
-                            <ul class="social-icons">
-                            <li>
-                                <a href="https://www.facebook.com/"><img src="/assets/img/fb.png" alt="Facebook" /></a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/"><img src="/assets/img/insta.png" alt="Instagram" /></a>
-                            </li>
-                            <li>
-                                <a href="https://www.twitter.com/"><img src="/assets/img/x.png" alt="Twitter" /></a>
-                            </li>
-                        </ul>    
+                        
                     <button onclick="window.location.href='index.html'">Back to Homepage</button>
 
                     </div>
@@ -196,8 +185,6 @@ export class AboutUs extends LitElement {
                     </div>
                 </div>
             </div>
-
-            
         `;
     }
 }
