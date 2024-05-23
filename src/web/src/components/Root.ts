@@ -179,6 +179,35 @@ export class Root extends LitElement {
             .game:hover {
                 cursor: pointer; /* Cursorstijl veranderen naar wijzende hand wanneer de gebruiker eroverheen gaat */
             }
+
+            .game1 {
+             width: 200px;
+             height: 100px;
+            }
+            .game2 {
+                flex: 0 0 auto;
+                width: 800px; /* Breedte van elk item aanpassen */
+                background-color: yellow;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .game3 {
+             width: 200px;
+             height: 100px;
+            }
+            .game4 {
+             width: 200px;
+             height: 100px;
+            }
+            .gameimg1, .gameimg2, .gameimg3, .gameimg4 {
+                max-width: 100%;
+                height: auto;
+                border-radius: 5px;
+                margin-bottom: 10px;
+
+}
+
         `;
 
     @state()
@@ -484,19 +513,20 @@ export class Root extends LitElement {
       #carousel:not(:defined) > * {
         display: none;
       }
+
     </style>
                     <h2>featured games</h2>
 
 <motion-carousel id="carousel">
 
-    <div class="game">
+                            <div class="game">
         
                                 <img src="https://lucastars.hbo-ict.cloud/media/7da176806505408c88b0d5f16f000a7b/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
                                 <h3>Lost Memories: Quest of the Forgotten Knight</h3>
                                 <li><a href="product.html">Product page</a></li>
                             </div>
                             <div class="game">
-                                <img src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt="The dragon-Slayer 3000">
+                                <img  class="img2" src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt="The dragon-Slayer 3000">
                                 <h3>The dragon-Slayer 3000</h3>
                                 <li><a href="product.html">Product page</a></li>
                             </div>
@@ -721,11 +751,12 @@ const styles: ReturnType<typeof css> = css`
         /* Defaults */
         width: 300px;
         height: 200px;
-        border-radius: 4px;
+        border-radius: 10px;
         background: gainsboro;
         cursor: pointer;
 
     }
+
 
     .fit {
         position: relative;
