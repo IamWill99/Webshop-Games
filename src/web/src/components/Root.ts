@@ -432,7 +432,7 @@ export class Root extends LitElement {
                 <div class="hero-image">
                     <div class="hero-text">
                         <h1 style="font-size:50px">Promotion Banner</h1>
-                        <a href=""><button class="button button1">More information</button></a>
+                        <a href="product.html"><button class="button button1">More information</button></a>
                     </div>
                 </div>
                 <div class="carousel-container">

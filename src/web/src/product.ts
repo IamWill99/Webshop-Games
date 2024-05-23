@@ -632,6 +632,55 @@ a:hover {
   border-radius: 50%;
 }
 
+.cart-section {
+    padding:24px;
+    background-color: rgb(18, 26, 132);
+    border-radius:20px;
+    color:white;
+
+}
+
+#orderButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color:red;
+    color:white;
+}
+
+#orderButton:hover {
+    background-color: #555;
+}
+
+#emptyCartButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color:red;
+    color:white;
+}
+
+#emptyCartButton:hover {
+    background-color: #555;
+}
+
+#removeFromCart {
+    padding: 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    background-color:red;
+    color:white;
+}
+
+#removeFromCart:hover {
+    background-color: #555;
+}
     `;
 
     private addNextPageProducts(): void {
@@ -664,7 +713,7 @@ a:hover {
         }, 0);
         const cartItems: any = Array.from(this.cart.entries()).map(([product, quantity]) => html`
         <li>${product.name} - € ${product.price} x ${quantity}
-        <button @click=${(): any => this.removeFromCart(product)}> Remove </button>
+        <button id="removeFromCart" @click=${(): any => this.removeFromCart(product)}> Remove </button>
     </li>
     `);
         // Navbar & Filters HTML
@@ -699,12 +748,15 @@ a:hover {
 
                 <section class="cart-section">
                 <h2>Shoppingcart</h2>
+                <br>
                 <ul>
                     ${cartItems}
                 </ul>
+                <br>
                 <p><strong>Total: € ${totalPrice.toFixed(2)}</strong></p>
-                <button @click=${this.goToCheckout}>Order</button>
-                <button @click=${this.emptyCart}>Empty cart</button>
+                <br>
+                <button id="orderButton" @click=${this.goToCheckout}>Checkout</button>
+                <button id="emptyCartButton" @click=${this.emptyCart}>Empty cart</button>
             </section>
         <section class="product-section">
                     ${productsToShow.map(product => html`
