@@ -256,9 +256,12 @@ export class Root extends LitElement {
         // TODO: Validation
 
         const result: boolean = await this._userService.register({
+            username: this._name,
             email: this._email,
             password: this._password,
-            name: this._name,
+            repeatPassword: "",
+            firstName: "",
+            lastName: ""
         });
 
         if (result) {
