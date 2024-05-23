@@ -484,6 +484,7 @@ export class Root extends LitElement {
             <div class="order-item">
                 <h2>${orderItem.name}</h2>
                 <p>${orderItem.description}</p>
+                 <img src="${orderItem.imageURLs}" alt="${orderItem.name}">
                 ${this._isLoggedIn
                     ? html`<button @click=${async (): Promise<void> => await this.addItemToCart(orderItem)}>
                           Toevoegen aan winkelmandje
