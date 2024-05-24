@@ -42,7 +42,7 @@ Deze retro hadden we de aandachtspunten van sprint 1 besproken en hoe we deze ha
 
 Dit zijn onze actiepunten voor sprint 3:
 
-1. De sprintplanning moet al uiterlijk eerste week van sprint 3 volledig zijn ingedeeld. De taken moeten verdeeld zijn en alle stories hebben weights. 
+1. De sprintplanning moet al uiterlijk eerste week van sprint 3 volledig zijn ingedeeld. De taken moeten verdeeld zijn en alle user stories moeten weights hebben. 
 
 2. We houden een wekelijke check op vrijdag om elkaars werk te controleren. Hier kunnen we onze vooruitgang zien en feedback geven. Als we de code zien van onze teamleden, dan krijgen we een beter beeld van de gemaakte vooruitgang.
 
