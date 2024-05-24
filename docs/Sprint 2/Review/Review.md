@@ -2,7 +2,7 @@
 
 # Presentaties en Feedback:
 
-**Scrumboard:**
+# Scrumboard:
 
 **Presentatie:**
 
@@ -16,9 +16,9 @@ Meer user stories afronden dan learning stories.
 
 Verplaats een user story pas naar 'Done' als alle taken en acceptatiecriteria zijn voltooid en aangevinkt.
 
-**Burndown chart:**
+# Burndown chart:
 
-P**resentatie:**
+**Presentatie:**
 
 We hebben de burndown chart getoond en de voortgang van de sprint besproken.
 
@@ -28,7 +28,7 @@ Let op de activiteiten in de burndown chart.
 
 De bolletjes op de chart geven aan hoe lang het duurt om een user story af te ronden, wat ons helpt in te schatten of we op schema liggen of dat we meer moeten versnellen.
 
-**Sequence diagram:**
+# Sequence diagram:
 
 **Presentatie:**
 
@@ -38,7 +38,7 @@ We hebben ons sequence diagram gepresenteerd.
 
 Let goed op welke symbolen worden gebruikt in een sequence diagram, zoals lifelines en activation bars.
 
-**Demo product:**
+# Demo product:
 
 **Presentatie:**
 
