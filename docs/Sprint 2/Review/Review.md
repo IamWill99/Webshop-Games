@@ -58,7 +58,7 @@ We gaan een betere sprintplanning maken en de taken beter verdelen in het team d
 
 **Communicatie met de product owner:**
 
-We zullen regelmatig gesprekken met onze product owner voeren om te bespreken hoe het gaat, wat er nog moet gebeuren en wat er eventueel veranderd moet worden. Dit zorgt voor een betere alignering van de verwachtingen en eisen.
+We zullen regelmatig gesprekken met onze product owner voeren om te bespreken hoe het gaat, wat er nog moet gebeuren en wat er eventueel veranderd moet worden. Dit verbetert de overeenstemming tussen behoeften en verwachtingen.
 
 **Tijdslimiet voor user stories:**
 
