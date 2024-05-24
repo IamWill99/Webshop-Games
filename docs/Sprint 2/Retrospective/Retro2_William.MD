@@ -12,7 +12,7 @@ Mijn aandachtspunten van sprint 1 waren:
 
 Ik heb me gehouden aan het besteden van meer tijd aan het onderzoeksverslag. Ik had met mijzelf afsproken om minimaal elke dag 30 tot 60 minuten te werken aan het onderzoeksverslag. Deze planning heb ik gevolgd en nu ben ik 90% klaar met mijn onderzoeksverslag. Het volgen van een planning heeft mij structuur gegeven en zorgde ervoor dat ik dagelijks aan het werk ging.
 
-Ik ben persoonlijk nu ook vaker gaan aankloppen bij teamleden of docenten voor hulp bij programmeren. Regelmatig verspilde ik meerdere uren aan het oplossen van een probleem, terwijl Nico het in een kwartier kan fixen. Echter zou ik dit wel vaker moeten doen. Ik ben een koppig persoon en wil graag alles zelf goed doen, waardoor ik vaak uren verspil.
+Ik ben persoonlijk nu ook vaker gaan aankloppen bij teamleden of docenten voor hulp bij programmeren. Regelmatig verspilde ik meerdere uren aan het oplossen van een probleem, terwijl Nico het in een kwartier kan fixen. Echter zou ik dit wel nog vaker moeten doen. Ik ben een koppig persoon en wil graag alles zelf goed doen, waardoor ik vaak uren verspil.
 
 **Aandachtspunt:**
 
