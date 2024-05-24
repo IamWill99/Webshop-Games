@@ -181,8 +181,12 @@ export class Root extends LitElement {
             }
 
             .game1 {
-             width: 200px;
-             height: 100px;
+                flex: 0 0 auto;
+                width: 500px; /* Breedte van elk item aanpassen */
+                background-color: #f4f4f4;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
             .game2 {
                 flex: 0 0 auto;
@@ -517,7 +521,7 @@ export class Root extends LitElement {
     </style>
                     <h2>featured games</h2>
 
-<motion-carousel id="carousel">
+<motion-carousel id="carousel">   
 
                             <div class="game">
         
