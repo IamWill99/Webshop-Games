@@ -4,7 +4,7 @@
 
 **Scrumboard:**
 
-Presentatie: We hebben het scrumboard gepresenteerd, inclusief de huidige status van alle user stories.
+**Presentatie: ** We hebben het scrumboard gepresenteerd, inclusief de huidige status van alle user stories.
 
 Feedback:
 
