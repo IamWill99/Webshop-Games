@@ -10,7 +10,7 @@ Ik realiseerde mij dat het belangrijk is om op tijd hulp te vragen en open te zi
 
 Het gesprek met mijn docent liet mij zien dat ik meer expertise moest laten zien omdat ik bepaalde kwaliteitscriteria miste.
 
-Hoewel ik nerveus was voor de feedback van de expert reviews, leerde ik dat deze waardevol is voor mijn groei. Ik ben blij met de feedback; voor de ene review kreeg ik op niveau en voor de andere boven niveau. De expert reviews gingen ook erg goed.
+Hoewel ik nerveus was voor de feedback van de expert reviews, leerde ik dat deze waardevol is voor mijn groei. Ik ben blij met de feedback; voor de ene review kreeg ik op niveau en voor de andere boven niveau. De expert reviews gingen goed.
 
 
 # Planning voor Sprint 3:
