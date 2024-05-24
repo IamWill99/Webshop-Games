@@ -499,13 +499,58 @@ export class Root extends LitElement {
                         </div>
                     </div>
                 </div>
-            </body>
+                <style>
+                    body {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        font-family: sans-serif;
+                    }
+
+                    #carousel {
+                        display: flex;
+                        width: 800px;
+                        height: 400px;
+                        user-select: none;
+                    }
+
+                    #carousel:not(:defined) > * {
+                        display: none;
+                    }
+
+                </style>
+            <motion-carousel id="carousel">
+                
+
+                <div class="game">
+                    <img src="https://lucastars.hbo-ict.cloud/media/7da176806505408c88b0d5f16f000a7b/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
+                    <h3>Lost Memories: Quest of the Forgotten Knight</h3>
+                    <li><a href="product.html">Product page</a></li>
+                </div>
+                <div class="game">
+                    <img  class="img2" src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt="The dragon-Slayer 3000">
+                    <h3>The dragon-Slayer 3000</h3>
+                    <li><a href="product.html">Product page</a></li>
+                </div>
+                <div class="game">
+                    <img src="https://lucastars.hbo-ict.cloud/media/f517798d34f14abcb65bee7386ef38dd/00000006000000000000000000000000.png" alt="Metro 8">
+                    <h3>Metro 8</h3>
+                    <li><a href="product.html">Product page</a></li>
+                </div>
+                <div class="game">
+                    <img src="https://lucastars.hbo-ict.cloud/media/2626cba298e74c869dfabb1fe9f778b3/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
+                    <h3>Save The Future</h3>
+                    <li><a href="product.html">Product page</a></li>
+                </div>
+
+            </motion-carousel>
             <h1>Welkom op de Luca Stars webshop!</h1>
             ${this._isLoggedIn
                 ? nothing
                 : html`<p>Je moet ingelogd zijn om producten aan je winkelmandje toe te kunnen voegen!</p>`}
 
                 <div class="order-items">${orderItems}</div>
+            </body>
             `;
     }
 
