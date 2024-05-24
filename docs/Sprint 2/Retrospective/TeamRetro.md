@@ -6,6 +6,18 @@
 
 ![alt text](IMG-20240524-WA0006.jpg)
 
+Deze retro hadden we de aandachtspunten van sprint 1 besproken en hoe we deze hadden aangepakt in sprint 2. Verder formuleren we nieuwe actiepunten voor sprint 3.
+
+**Dit waren onze aandachtspunten van sprint 1:**
+
+- Samenwerking en team dynamic was deze sprint zeer positief, vooral na de recent gemaakte afspraken
+- Een teamlid vond dat hij meer tijd kon besteden aan het onderzoeksverslag
+- Over het algemeen vonden wij dat we niet veel tijd hadden deze sprint
+- Root.TS is een te lang bestand, wat ons af en toe in de war brengt
+- Als we ergens vastlopen, sneller naar hulp vragen
+- We beginnen lit te begrijpen
+- veel requirements van de product owner
+
 **Aandachtspunten team:**
 
 1. We vonden als team dat we als team weinig tijd hadden in sprint 2. Dit komt doordat teamleden tijd hadden besteed aan het onderzoeksverslag. Verder was onze sprintplanning aan het begin van het blok niet compleet. Zo moesten we een week later pas een verbeterde Scrumboard met nieuwe User Stories laten zien.
