@@ -1,6 +1,6 @@
 # Review sprint 2
 
-#Presentaties en Feedback:#
+# Presentaties en Feedback:
 
 **Scrumboard:**
 
@@ -41,7 +41,7 @@ Houd de requirements up-to-date en verwerk deze in de user stories.
 
 
 
-#Plan voor de aankomende sprint:#
+# Plan voor de aankomende sprint:
 
 **Meer user stories maken:**
 
