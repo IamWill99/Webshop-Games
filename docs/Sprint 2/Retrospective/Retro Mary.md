@@ -1,9 +1,10 @@
 # Individuele Retro
+
 **Overzicht:**
 
 In Sprint 1 had ik doelen opgesteld om beter te worden in lit en gemotiveerd te blijven op school. Tijdens Sprint 2 merkte ik dat ik eerder om hulp had moeten vragen en mijn gevoelens had moeten delen met mijn teamgenoten, vooral als het ging om niet alleen te coderen. Gelukkig heeft een gesprek met mijn docent (Roos) geholpen om mij gerust te stellen en inzicht te geven.
 
-#Leerpunten van Sprint 2:
+# Leerpunten van Sprint 2:
 
 Ik realiseerde mij dat het belangrijk is om op tijd hulp te vragen en open te zijn tegenover mijn team.
 
