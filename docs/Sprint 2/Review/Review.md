@@ -1,6 +1,5 @@
-# Review sprint 2
+# Review sprint 2 Presentaties en Feedback:
 
-# Presentaties en Feedback:
 
 # Scrumboard:
 
