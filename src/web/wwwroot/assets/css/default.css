@@ -29,9 +29,9 @@ body {
 }
 
 .navigationmenu a {
-    text-decoration: none;
+    text-decoration:solid;
     font-family: Verdana, sans-serif;
-    color: rgba(236,174,32,255);
+    color: white;
     font-size: 20px;
     padding: 10px 30px;
     width: 50%;
