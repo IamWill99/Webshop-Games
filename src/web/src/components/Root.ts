@@ -165,7 +165,7 @@ export class Root extends LitElement {
                 max-width: 100%;
                 height: auto;
                 border-radius: 5px;
-                margin-bottom: 10px;
+                margin-bottom: 10px;    
             }
             .game h3 {
                 margin: 0;
@@ -182,33 +182,23 @@ export class Root extends LitElement {
 
             .game1 {
                 flex: 0 0 auto;
-                width: 500px; /* Breedte van elk item aanpassen */
-                background-color: #f4f4f4;
-                border-radius: 10px;
-                padding: 20px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-            .game2 {
-                flex: 0 0 auto;
                 width: 800px; /* Breedte van elk item aanpassen */
-                background-color: yellow;
+                background-color: rgb(18, 26, 132);
                 border-radius: 10px;
                 padding: 20px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                color: white;
+                margin: 0 auto;
             }
-            .game3 {
-             width: 200px;
-             height: 100px;
-            }
-            .game4 {
-             width: 200px;
-             height: 100px;
-            }
-            .gameimg1, .gameimg2, .gameimg3, .gameimg4 {
+            
+
+            .game1 img {
                 max-width: 100%;
                 height: auto;
                 border-radius: 5px;
                 margin-bottom: 10px;
+                height: 320px;
+                width: 750px;
 
 }
 
@@ -502,6 +492,7 @@ export class Root extends LitElement {
                         </div>
                     </div>
                 </div>
+                <br><br>
                 <style>
                     body {
                         display: flex;
@@ -513,8 +504,9 @@ export class Root extends LitElement {
                     #carousel {
                         display: flex;
                         width: 800px;
-                        height: 400px;
+                        height: 500px;
                         user-select: none;
+                        margin: 0 auto;
                     }
 
                     #carousel:not(:defined) > * {
@@ -525,25 +517,30 @@ export class Root extends LitElement {
             <motion-carousel id="carousel">
                 
 
-                <div class="game">
+                <div class="game1">
                     <img src="https://lucastars.hbo-ict.cloud/media/7da176806505408c88b0d5f16f000a7b/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
-                    <h3>Lost Memories: Quest of the Forgotten Knight</h3>
-                    <li><a href="product.html">Product page</a></li>
+                    <h3>Lost Memories: Quest of the Forgotten Knight</h3> <br>
+                    <a href="product.html" class="button1">Product page</a>
                 </div>
-                <div class="game">
-                    <img  class="img2" src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt="The dragon-Slayer 3000">
-                    <h3>The dragon-Slayer 3000</h3>
-                    <li><a href="product.html">Product page</a></li>
+                <div class="game1">
+                    <img src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt="The dragon-Slayer 3000">
+                    <h3>The dragon-Slayer 3000</h3><br>
+                    <a href="product.html" class="button1">Product page</a>
                 </div>
-                <div class="game">
+                <div class="game1">
                     <img src="https://lucastars.hbo-ict.cloud/media/f517798d34f14abcb65bee7386ef38dd/00000006000000000000000000000000.png" alt="Metro 8">
-                    <h3>Metro 8</h3>
-                    <li><a href="product.html">Product page</a></li>
+                    <h3>Metro 8</h3><br>
+                    <a href="product.html" class="button1">Product page</a>
                 </div>
-                <div class="game">
+                <div class="game1">
                     <img src="https://lucastars.hbo-ict.cloud/media/2626cba298e74c869dfabb1fe9f778b3/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
-                    <h3>Save The Future</h3>
-                    <li><a href="product.html">Product page</a></li>
+                    <h3>Save The Future</h3><br>
+                    <a href="product.html" class="button1">Product page</a>
+                </div>
+                <div class="game1">
+                    <img src="https://lucastars.hbo-ict.cloud/media/3fcbea3f2e3b4818ba8e1b0584550df0/00000006000000000000000000000000.png" >
+                    <h3>Lost Girl</h3><br>
+                    <a href="product.html" class="button1">Product page</a>
                 </div>
 
             </motion-carousel>
@@ -812,7 +809,7 @@ const styles: ReturnType<typeof css> = css`
         height: 100%;
         width: 8px;
         border-radius: 8px;
-        background: rgb(18, 26, 132);
+        background: #ecae20;
     }
     `;
 
