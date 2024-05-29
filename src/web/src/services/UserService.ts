@@ -11,6 +11,7 @@ const headers: { "Content-Type": string } = {
  * Handles user related functionality
  */
 export class UserService {
+    [x: string]: any;
     private _tokenService: TokenService = new TokenService();
 
     /**

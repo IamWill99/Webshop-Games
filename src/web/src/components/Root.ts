@@ -295,9 +295,12 @@ export class Root extends LitElement {
         // TODO: Validation
 
         const result: boolean = await this._userService.register({
+            username: this._name,
             email: this._email,
             password: this._password,
-            name: this._name,
+            repeatPassword: "",
+            firstName: "",
+            lastName: ""
         });
 
         if (result) {
@@ -561,6 +564,7 @@ export class Root extends LitElement {
      */
     private renderOrderItem(orderItem: OrderItem): TemplateResult {
         return html`
+<<<<<<< HEAD
                 <div class="order-item">
                     <h2>${orderItem.name}</h2>
                     <p>${orderItem.description}</p>
@@ -571,6 +575,19 @@ export class Root extends LitElement {
                 : nothing}
                 </div>
             `;
+=======
+            <div class="order-item">
+                <h2>${orderItem.name}</h2>
+                <p>${orderItem.description}</p>
+                 <img src="${orderItem.imageURLs}" alt="${orderItem.name}">
+                ${this._isLoggedIn
+                    ? html`<button @click=${async (): Promise<void> => await this.addItemToCart(orderItem)}>
+                          Toevoegen aan winkelmandje
+                      </button>`
+                    : nothing}
+            </div>
+        `;
+>>>>>>> e96faba789c0a55cd441134e28000994c1239131
     }
 
     /**
