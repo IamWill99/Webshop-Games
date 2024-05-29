@@ -1,5 +1,6 @@
 // NOTE: This makes sure the component can be rendered by the browser
 export * from "./components/Root";
+<<<<<<< HEAD
 import { LitElement, html, css, TemplateResult, CSSResult } from "lit";
 import { customElement } from "lit/decorators.js";
 
@@ -134,3 +135,6 @@ document.querySelectorAll<HTMLButtonElement>(".containermenu")
 
             
       
+=======
+export * from "./components/MotionCarousel";
+>>>>>>> 152d85a2522cac4196ac8a49b2d8d9de870c4e11

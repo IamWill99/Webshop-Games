@@ -760,6 +760,7 @@ export class Root extends LitElement {
 }
 
 
+<<<<<<< HEAD
 //import {css} from "lit";
 
 const styles: ReturnType<typeof css> = css`
@@ -906,3 +907,5 @@ export class MotionCarousel extends LitElement {
     }
 }
 
+=======
+>>>>>>> 152d85a2522cac4196ac8a49b2d8d9de870c4e11
