@@ -37,6 +37,11 @@ router.get("/product-root", (_, res) => {
     res.send("Welcome to our webshop! Learn more about our product.");
 });
 
+// New route for "admin"-page
+router.get("/returns-root", (_, res) => {
+    res.send("Welcome to our webshop! Learn more about our returns.");
+});
+
 
 // NOTE: Everything after this point only works with a valid JWT token!
 router.use(handleTokenBasedAuthentication);

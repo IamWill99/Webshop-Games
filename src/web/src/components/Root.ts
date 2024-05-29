@@ -561,18 +561,6 @@ export class Root extends LitElement {
      */
     private renderOrderItem(orderItem: OrderItem): TemplateResult {
         return html`
-<<<<<<< HEAD
-                <div class="order-item">
-                    <h2>${orderItem.name}</h2>
-                    <p>${orderItem.description}</p>
-                    ${this._isLoggedIn
-                ? html`<button @click=${async (): Promise<void> => await this.addItemToCart(orderItem)}>
-                            Toevoegen aan winkelmandje
-                        </button>`
-                : nothing}
-                </div>
-            `;
-=======
             <div class="order-item">
                 <h2>${orderItem.name}</h2>
                 <p>${orderItem.description}</p>
@@ -584,7 +572,6 @@ export class Root extends LitElement {
                     : nothing}
             </div>
         `;
->>>>>>> e96faba789c0a55cd441134e28000994c1239131
     }
 
     /**
@@ -757,7 +744,6 @@ export class Root extends LitElement {
 }
 
 
-<<<<<<< HEAD
 //import {css} from "lit";
 
 const styles: ReturnType<typeof css> = css`
@@ -904,5 +890,3 @@ export class MotionCarousel extends LitElement {
     }
 }
 
-=======
->>>>>>> 152d85a2522cac4196ac8a49b2d8d9de870c4e11
