@@ -66,6 +66,7 @@ export class Register extends LitElement {
             repeatPassword: this._repeatPassword,
             firstName: this._firstName,
             lastName: this._lastName,
+            name: ""
         });
 
         if (result) {
