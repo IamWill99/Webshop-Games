@@ -1,4 +1,4 @@
-{
+    {
     "name": "@webshop/web",
     "version": "1.0.0",
     "private": true,
@@ -11,6 +11,8 @@
         "lit": "3.1.0",
         "glob": "10.3.12",
         "vite": "5.2.8",
-        "vite-plugin-eslint": "1.8.1"
+        "vite-plugin-eslint": "1.8.1",
+        "@lit-labs/motion": "1.0.7"
+
     }
 }

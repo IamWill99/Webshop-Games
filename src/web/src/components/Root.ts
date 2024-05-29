@@ -5,6 +5,12 @@ import { OrderItem } from "@shared/types/OrderItem";
 import { TokenService } from "../services/TokenService";
 import { OrderItemService } from "../services/OrderItemService";
 import { UserHelloResponse } from "@shared/responses/UserHelloResponse";
+import { PropertyValues, noChange } from "lit";
+import { property, query } from "lit/decorators.js";
+import { animate } from "@lit-labs/motion";
+import { styleMap } from "lit/directives/style-map.js";
+//import {styles} from "../styles.js";
+
 
 /** Enumeration to keep track of all the different pages */
 enum RouterPage {
@@ -25,155 +31,178 @@ enum RouterPage {
 @customElement("webshop-root")
 export class Root extends LitElement {
     public static styles = css`
-        footer {
-            color: #ecae20;
-        }
+            footer {
+                color: #ecae20;
+            }
 
-        header {
-            background-color: #fbfbfa;
-            padding-left: 60px;
-        }
+            header {
+                background-color: #fbfbfa;
+                padding-left: 60px;
+            }
 
-        main {
-            padding: 10px;
-        }
+            main {
+                padding: 10px;
+            }
 
-        footer {
-            background-color: rgb(18, 26, 132);
-            padding: 10px;
-            text-align: center;
-        }
+            footer {
+                background-color: rgb(18, 26, 132);
+                padding: 10px;
+                text-align: center;
+            }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
 
-        nav .logo img {
-            width: auto;
-            height: 100px;
-            cursor: pointer;
-        }
+            nav .logo img {
+                width: auto;
+                height: 100px;
+                cursor: pointer;
+            }
 
-        .form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+            .form {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
 
-        .form label {
-            display: block;
-            margin-bottom: 5px;
-        }
+            .form label {
+                display: block;
+                margin-bottom: 5px;
+            }
 
-        .hero-text {
-            text-align: center;
-            color: black;
-            padding-top: 150px;
-        }
-        .hero-image {
-            background: lightgrey;
-            height: 500px;
-        }
+            .hero-text {
+                text-align: center;
+                color: black;
+                padding-top: 150px;
+            }
+            .hero-image {
+                background: lightgrey;
+                height: 500px;
+            }
 
-        .button1 {
-            background-color: red;
-            color: white;
-            font-size: 15px;
-            border-radius: 50px;
-            padding: 10px;
-            text-align: center;
-            cursor: pointer;
-            border-style: solid;
-            border-color: red;
-        }
+            .button1 {
+                background-color: red;
+                color: white;
+                font-size: 15px;
+                border-radius: 50px;
+                padding: 10px;
+                text-align: center;
+                cursor: pointer;
+                border-style: solid;
+                border-color: red;
+            }
 
-        .order-items {
-            display: flex;
-            justify-content: space-between;
-        }
+            .order-items {
+                display: flex;
+                justify-content: space-between;
+            }
 
-        .footer-section h3 {
-            color: white !important;
-        }
+            .footer-section h3 {
+                color: white !important;
+            }
 
-        .footer-section,
-        .footer-section p,
-        .footer-section ul,
-        .footer-section ul li,
-        .social-icons img {
-            color: #ecae20 !important;
-        }
+            .footer-section,
+            .footer-section p,
+            .footer-section ul,
+            .footer-section ul li,
+            .social-icons img {
+                color: #ecae20 !important;
+            }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-        .footer-section {
-            flex: 1;
-            border-right: 1px solid white; /* Voeg een witte rand toe aan de rechterkant van elke sectie */
-        }
+            .footer-section {
+                flex: 1;
+                border-right: 1px solid white; /* Voeg een witte rand toe aan de rechterkant van elke sectie */
+            }
 
-        .footer-section ul {
-            list-style: none; /* Verwijder de standaard opsommingstekens */
-            padding: 0; /* Verwijder eventuele standaard padding */
-        }
+            .footer-section ul {
+                list-style: none; /* Verwijder de standaard opsommingstekens */
+                padding: 0; /* Verwijder eventuele standaard padding */
+            }
 
-        .footer-section ul li {
-            margin-bottom: 10px; /* Voeg wat ruimte toe tussen de lijstitems */
-        }
+            .footer-section ul li {
+                margin-bottom: 10px; /* Voeg wat ruimte toe tussen de lijstitems */
+            }
 
-        .footer-section ul li a {
-            color: #ecae20;
-        }
+            .footer-section ul li a {
+                color: #ecae20;
+            }
 
-        .social-icons img {
-            width: 40px; /* Pas de breedte van de sociale mediapictogrammen aan */
-            height: auto; /* Hierdoor schaalt de hoogte automatisch met behoud van de aspectverhouding */
-            margin-right: 10px; /* Voeg wat ruimte toe tussen de afbeeldingen */
-        }
+            .social-icons img {
+                width: 40px; /* Pas de breedte van de sociale mediapictogrammen aan */
+                height: auto; /* Hierdoor schaalt de hoogte automatisch met behoud van de aspectverhouding */
+                margin-right: 10px; /* Voeg wat ruimte toe tussen de afbeeldingen */
+            }
 
-        .carousel-container {
-            width: 100%;
-            overflow: hidden;
-        }
-        .carousel {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 10px;
-            justify-content: space-evenly;
-        }
-        .game {
-            flex: 0 0 auto;
-            width: 300px; /* Breedte van elk item aanpassen */
-            background-color: #f4f4f4;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .game img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        .game h3 {
-            margin: 0;
-            font-size: 18px;
-            color: #333;
-        }
-        .game p {
-            font-size: 14px;
-            color: #666;
-        }
-        .game:hover {
-            cursor: pointer; /* Cursorstijl veranderen naar wijzende hand wanneer de gebruiker eroverheen gaat */
-        }
-    `;
+            .carousel-container {
+                width: 100%;
+                overflow: hidden;
+            }
+            .carousel {
+                display: flex;
+                overflow-x: auto;
+                gap: 20px;
+                padding: 10px;
+                justify-content: space-evenly;
+            }
+            .game {
+                flex: 0 0 auto;
+                width: 300px; /* Breedte van elk item aanpassen */
+                background-color: #f4f4f4;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .game img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 5px;
+                margin-bottom: 10px;    
+            }
+            .game h3 {
+                margin: 0;
+                font-size: 18px;
+                color: #333;
+            }
+            .game p {
+                font-size: 14px;
+                color: #666;
+            }
+            .game:hover {
+                cursor: pointer; /* Cursorstijl veranderen naar wijzende hand wanneer de gebruiker eroverheen gaat */
+            }
+
+            .game1 {
+                flex: 0 0 auto;
+                width: 800px; /* Breedte van elk item aanpassen */
+                background-color: rgb(18, 26, 132);
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                color: white;
+                margin: 0 auto;
+            }
+            
+
+            .game1 img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                height: 320px;
+                width: 750px;
+
+}
+
+        `;
 
     @state()
     private _currentPage: RouterPage = RouterPage.Home;
@@ -256,9 +285,13 @@ export class Root extends LitElement {
         // TODO: Validation
 
         const result: boolean = await this._userService.register({
+            username: this._name,
             email: this._email,
             password: this._password,
-            name: this._name,
+            repeatPassword: "",
+            firstName: "",
+            lastName: "",
+            name: ""
         });
 
         if (result) {
@@ -283,8 +316,7 @@ export class Root extends LitElement {
         this._cartItemsCount = result.cartItems?.length || 0;
 
         alert(
-            `Hallo ${result.email}!\r\n\r\nJe hebt de volgende producten in je winkelmandje:\r\n- ${
-                result.cartItems?.join("\r\n- ") || "Geen"
+            `Hallo ${result.email}!\r\n\r\nJe hebt de volgende producten in je winkelmandje:\r\n- ${result.cartItems?.join("\r\n- ") || "Geen"
             }`
         );
     }
@@ -345,70 +377,70 @@ export class Root extends LitElement {
         }
 
         return html`
-            <head>
-                <link
-                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-                    rel="stylesheet"
-                />
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-            </head>
-            <header>
-                <nav>
-                    <div
-                        class="logo"
-                        @click=${(): void => {
-                            this._currentPage = RouterPage.Home;
-                        }}
-                    >
-                        <img src="/assets/img/logo.png" alt="Logo" />
-                    </div>
+                <head>
+                    <link
+                        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+                        rel="stylesheet"
+                    />
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                </head>
+                <header>
+                    <nav>
+                        <div
+                            class="logo"
+                            @click=${(): void => {
+                this._currentPage = RouterPage.Home;
+            }}
+                        >
+                            <img src="/assets/img/logo.png" alt="Logo" />
+                        </div>
 
-                    ${this.renderLoginInNav()} ${this.renderRegisterInNav()} ${this.renderCartInNav()}
-                    ${this.renderLogoutInNav()}
-                </nav>
-            </header>
-            <main>${contentTemplate}</main>
-            <footer>Copyright &copy; Luca Stars 2024</footer>
+                        ${this.renderLoginInNav()} ${this.renderRegisterInNav()} ${this.renderCartInNav()}
+                        ${this.renderLogoutInNav()}
+                    </nav>
+                </header>
+                <main>${contentTemplate}</main>
+                <footer>Copyright &copy; Luca Stars 2024</footer>
 
-            <!-- Hier komt de footercode -->
-            <footer>
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h3>Contact</h3>
-                        <ul>
-                            <li>Adres: Amstelcampus, Wibautstraat 3b, 1091 GH Amsterdam</li>
-                            <li>Telefoon: +31 6 12345678</li>
-                            <li>E-mail: info@lucastart.nl</li>
-                        </ul>
-                    </div>
+                <!-- Hier komt de footercode -->
+                <footer>
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <h3>Contact</h3>
+                            <ul>
+                                <li>Adres: Amstelcampus, Wibautstraat 3b, 1091 GH Amsterdam</li>
+                                <li>Telefoon: +31 6 12345678</li>
+                                <li>E-mail: info@lucastart.nl</li>
+                            </ul>
+                        </div>
 
-                    <div class="footer-section">
-                        <h3>We are happy to help you</h3>
-                        <ul>
-                            <li><a href="/shipping">Shipping</a></li>
-                            <li><a href="/returns">Returns</a></li>
-                        </ul>
-                    </div>
+                        <div class="footer-section">
+                            <h3>We are happy to help you</h3>
+                            <ul>
+                                <li><a href="/shipping">Shipping</a></li>
+                                <li><a href="/returns">Returns</a></li>
+                            </ul>
+                        </div>
 
-                    <div class="footer-section">
-                        <h3>About Us</h3>
-                        <ul>
-                            <li><a href="/AboutUs">About us</a></li>
-                        </ul>
-                    </div>
+                        <div class="footer-section">
+                            <h3>About Us</h3>
+                            <ul>
+                                <li><a href="/AboutUs">About us</a></li>
+                            </ul>
+                        </div>
 
                     <div class="footer-section">
                         <h3>Follow us</h3>
                         <ul class="social-icons">
                             <li>
-                                <a href="#"><img src="/assets/img/fb.png" alt="Facebook" /></a>
+                                <a href="https://www.facebook.com/"><img src="/assets/img/fb.png" alt="Facebook" /></a>
                             </li>
                             <li>
-                                <a href="#"><img src="/assets/img/insta.png" alt="Instagram" /></a>
+                                <a href="https://www.instagram.com/"><img src="/assets/img/insta.png" alt="Instagram" /></a>
                             </li>
                             <li>
-                                <a href="#"><img src="/assets/img/x.png" alt="Twitter" /></a>
+                                <a href="https://www.twitter.com/"><img src="/assets/img/x.png" alt="Twitter" /></a>
                             </li>
                         </ul>
                     </div>
@@ -432,7 +464,7 @@ export class Root extends LitElement {
                 <div class="hero-image">
                     <div class="hero-text">
                         <h1 style="font-size:50px">Promotion Banner</h1>
-                        <a href=""><button class="button button1">More information</button></a>
+                        <a href="product.html"><button class="button button1">More information</button></a>
                     </div>
                 </div>
                 <div class="carousel-container">
@@ -461,14 +493,66 @@ export class Root extends LitElement {
                         </div>
                     </div>
                 </div>
-            </body>
+                <br><br>
+                <style>
+                    body {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        font-family: sans-serif;
+                    }
+
+                    #carousel {
+                        display: flex;
+                        width: 800px;
+                        height: 500px;
+                        user-select: none;
+                        margin: 0 auto;
+                    }
+
+                    #carousel:not(:defined) > * {
+                        display: none;
+                    }
+
+                </style>
+            <motion-carousel id="carousel">
+                
+
+                <div class="game1">
+                    <img src="https://lucastars.hbo-ict.cloud/media/7da176806505408c88b0d5f16f000a7b/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
+                    <h3>Lost Memories: Quest of the Forgotten Knight</h3> <br>
+                    <a href="product.html" class="button1">Product page</a>
+                </div>
+                <div class="game1">
+                    <img src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt="The dragon-Slayer 3000">
+                    <h3>The dragon-Slayer 3000</h3><br>
+                    <a href="product.html" class="button1">Product page</a>
+                </div>
+                <div class="game1">
+                    <img src="https://lucastars.hbo-ict.cloud/media/f517798d34f14abcb65bee7386ef38dd/00000006000000000000000000000000.png" alt="Metro 8">
+                    <h3>Metro 8</h3><br>
+                    <a href="product.html" class="button1">Product page</a>
+                </div>
+                <div class="game1">
+                    <img src="https://lucastars.hbo-ict.cloud/media/2626cba298e74c869dfabb1fe9f778b3/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
+                    <h3>Save The Future</h3><br>
+                    <a href="product.html" class="button1">Product page</a>
+                </div>
+                <div class="game1">
+                    <img src="https://lucastars.hbo-ict.cloud/media/3fcbea3f2e3b4818ba8e1b0584550df0/00000006000000000000000000000000.png" >
+                    <h3>Lost Girl</h3><br>
+                    <a href="product.html" class="button1">Product page</a>
+                </div>
+
+            </motion-carousel>
             <h1>Welkom op de Luca Stars webshop!</h1>
             ${this._isLoggedIn
                 ? nothing
                 : html`<p>Je moet ingelogd zijn om producten aan je winkelmandje toe te kunnen voegen!</p>`}
 
-            <div class="order-items">${orderItems}</div>
-        `;
+                <div class="order-items">${orderItems}</div>
+            </body>
+            `;
     }
 
     /**
@@ -481,6 +565,7 @@ export class Root extends LitElement {
             <div class="order-item">
                 <h2>${orderItem.name}</h2>
                 <p>${orderItem.description}</p>
+                 <img src="${orderItem.imageURLs}" alt="${orderItem.name}">
                 ${this._isLoggedIn
                     ? html`<button @click=${async (): Promise<void> => await this.addItemToCart(orderItem)}>
                           Toevoegen aan winkelmandje
@@ -495,26 +580,26 @@ export class Root extends LitElement {
      */
     private renderLogin(): TemplateResult {
         return html`
-            <div class="form">
-                ${this.renderEmail()} ${this.renderPassword()}
+                <div class="form">
+                    ${this.renderEmail()} ${this.renderPassword()}
 
-                <div>
-                    <button @click="${this.submitLoginForm}" type="submit">Inloggen</button>
-                </div>
+                    <div>
+                        <button @click="${this.submitLoginForm}" type="submit">Inloggen</button>
+                    </div>
 
-                <div>
-                    Of
-                    <button
-                        @click="${(): void => {
-                            this._currentPage = RouterPage.Register;
-                        }}"
-                    >
-                        Registreer
-                    </button>
-                    je door hier te klikken.
+                    <div>
+                        Of
+                        <button
+                            @click="${(): void => {
+                this._currentPage = RouterPage.Register;
+            }}"
+                        >
+                            Registreer
+                        </button>
+                        je door hier te klikken.
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
     }
 
     /**
@@ -522,31 +607,31 @@ export class Root extends LitElement {
      */
     private renderRegister(): TemplateResult {
         return html`
-            <div class="form">
-                <div>
-                    <label for="username">Naam</label>
-                    <input type="text" id="name" value=${this._name} @change=${this.onChangeName} />
-                </div>
+                <div class="form">
+                    <div>
+                        <label for="username">Naam</label>
+                        <input type="text" id="name" value=${this._name} @change=${this.onChangeName} />
+                    </div>
 
-                ${this.renderEmail()} ${this.renderPassword()}
+                    ${this.renderEmail()} ${this.renderPassword()}
 
-                <div>
-                    <button @click="${this.submitRegisterForm}" type="submit">Registreer</button>
-                </div>
+                    <div>
+                        <button @click="${this.submitRegisterForm}" type="submit">Registreer</button>
+                    </div>
 
-                <div>
-                    Of
-                    <button
-                        @click="${(): void => {
-                            this._currentPage = RouterPage.Login;
-                        }}"
-                    >
-                        Login
-                    </button>
-                    door hier te klikken.
+                    <div>
+                        Of
+                        <button
+                            @click="${(): void => {
+                this._currentPage = RouterPage.Login;
+            }}"
+                        >
+                            Login
+                        </button>
+                        door hier te klikken.
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
     }
 
     /**
@@ -558,12 +643,12 @@ export class Root extends LitElement {
         }
 
         return html`<div
-            @click=${(): void => {
+                @click=${(): void => {
                 this._currentPage = RouterPage.Login;
             }}
-        >
-            <button>Inloggen</button>
-        </div>`;
+            >
+                <button>Inloggen</button>
+            </div>`;
     }
 
     /**
@@ -575,12 +660,12 @@ export class Root extends LitElement {
         }
 
         return html` <div
-            @click=${(): void => {
+                @click=${(): void => {
                 this._currentPage = RouterPage.Register;
             }}
-        >
-            <button>Registreren</button>
-        </div>`;
+            >
+                <button>Registreren</button>
+            </div>`;
     }
 
     /**
@@ -592,8 +677,8 @@ export class Root extends LitElement {
         }
 
         return html`<div @click=${this.clickCartButton}>
-            <button>Winkelmandje (${this._cartItemsCount} producten)</button>
-        </div>`;
+                <button>Winkelmandje (${this._cartItemsCount} producten)</button>
+            </div>`;
     }
 
     /**
@@ -605,10 +690,10 @@ export class Root extends LitElement {
         }
 
         return html`
-            <div @click=${this.clickLogoutButton}>
-                <button>Logout</button>
-            </div>
-        `;
+                <div @click=${this.clickLogoutButton}>
+                    <button>Logout</button>
+                </div>
+            `;
     }
 
     /**
@@ -616,15 +701,15 @@ export class Root extends LitElement {
      */
     private renderEmail(): TemplateResult {
         return html`<div>
-            <label for="email">E-mail</label>
-            <input
-                type="text"
-                name="email"
-                placeholder="test@test.nl"
-                value=${this._email}
-                @change=${this.onChangeEmail}
-            />
-        </div>`;
+                <label for="email">E-mail</label>
+                <input
+                    type="text"
+                    name="email"
+                    placeholder="test@test.nl"
+                    value=${this._email}
+                    @change=${this.onChangeEmail}
+                />
+            </div>`;
     }
 
     /**
@@ -632,9 +717,9 @@ export class Root extends LitElement {
      */
     private renderPassword(): TemplateResult {
         return html`<div>
-            <label for="password">Wachtwoord</label>
-            <input type="password" value=${this._password} @change=${this.onChangePassword} />
-        </div>`;
+                <label for="password">Wachtwoord</label>
+                <input type="password" value=${this._password} @change=${this.onChangePassword} />
+            </div>`;
     }
 
     /**
@@ -658,3 +743,151 @@ export class Root extends LitElement {
         this._name = (event.target as HTMLInputElement).value;
     }
 }
+
+
+//import {css} from "lit";
+
+const styles: ReturnType<typeof css> = css`
+    :host {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        /* Defaults */
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        background: gainsboro;
+        cursor: pointer;
+
+    }
+
+
+    .fit {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+
+    .selected {
+        top: -100%;
+    }
+
+    ::slotted(*) {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+    }
+
+    .bar {
+        position: absolute;
+        bottom: 25px;
+        width: calc(100% - 16px);
+        left: 8px;
+        height: 20px;
+        background: rgba(200, 200, 200, 0.5);
+        border-radius: 8px;
+        pointer-events: none;
+
+    }
+
+    .indicator {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        width: 8px;
+        border-radius: 8px;
+        background: #ecae20;
+    }
+    `;
+
+
+@customElement("motion-carousel")
+export class MotionCarousel extends LitElement {
+    public static styles = styles;
+
+    @query("slot[name=\"selected\"]", true)
+    private selectedSlot!: HTMLSlotElement;
+
+    @query("slot[name=\"previous\"]", true)
+    private previousSlot!: HTMLSlotElement;
+
+    @property({ type: Number })
+    public selected = 0;
+
+    private left = 0;
+    private selectedInternal = 0;
+
+    public get maxSelected(): number {
+        return this.childElementCount - 1;
+    }
+
+    public hasValidSelected(): boolean {
+        return this.selected >= 0 && this.selected <= this.maxSelected;
+    }
+
+    public render(): ReturnType<typeof html> {
+        const p: number = this.selectedInternal;
+        const s: number = (this.selectedInternal =
+            this.hasValidSelected() ? this.selected : this.selectedInternal);
+        const shouldMove: boolean = this.hasUpdated && s !== p;
+        const atStart: boolean = p === 0;
+        const toStart: boolean = s === 0;
+        const atEnd: boolean = p === this.maxSelected;
+        const toEnd: boolean = s === this.maxSelected;
+        const shouldAdvance: boolean = shouldMove &&
+            (atEnd ? toStart : atStart ? !toEnd : s > p);
+        const delta: number = (shouldMove ? Number(shouldAdvance) || -1 : 0) * 100;
+        this.left -= delta;
+        const animateLeft: string = `${this.left}%`;
+        const selectedLeft: string = `${-this.left}%`;
+        const previousLeft: string = `${-this.left - delta}%`;
+        const w: number = 100 / this.childElementCount;
+        const indicatorLeft: string = `${w * s}%`;
+        const indicatorWidth: string = `${w}%`;
+        return html`
+        <div class="fit"
+            ${animate()}
+            @click=${this.clickHandler}
+            style=${styleMap({ left: animateLeft })}>
+            <div class="fit" style=${shouldMove ? styleMap({ left: previousLeft }) : noChange
+            }>
+            <slot name="previous"></slot>
+            </div>
+            <div class="fit selected" style=${shouldMove ? styleMap({ left: selectedLeft }) : noChange
+            }>
+            <slot name="selected"></slot>
+            </div>
+        </div>
+        <div class="bar"><div class="indicator"
+            ${animate()}
+            style=${styleMap({ left: indicatorLeft, width: indicatorWidth })}></div></div>
+        `;
+    }
+
+    private previous = -1;
+
+    protected updated(changedProperties: PropertyValues): void {
+        if ((changedProperties.has("selected") || this.previous === -1) && this.hasValidSelected()) {
+            this.updateSlots();
+            this.previous = this.selected;
+        }
+    }
+
+    private updateSlots(): void {
+        // unset old slot state
+        this.selectedSlot.assignedElements()[0]?.removeAttribute("slot");
+        this.previousSlot.assignedElements()[0]?.removeAttribute("slot");
+        // set slots
+        this.children[this.previous]?.setAttribute("slot", "previous");
+        this.children[this.selected]?.setAttribute("slot", "selected");
+    }
+
+    private clickHandler(e: MouseEvent): void {
+        const i: number = this.selected + (Number(!e.shiftKey) || -1);
+        this.selected = i > this.maxSelected ? 0 : i < 0 ? this.maxSelected : i;
+        const change: CustomEvent<number> = new CustomEvent("change",
+            { detail: this.selected, bubbles: true, composed: true });
+        this.dispatchEvent(change);
+    }
+}
+

@@ -379,6 +379,8 @@ export class product extends LitElement {
     
 ];
 
+private cart: Map<Product, number> = new Map(); // Hier houden we het winkelwagentje bij
+
     public static styles: CSSResult = css`
         /* Voeg hier je CSS-stijlen toe voor de "Product Page"-pagina */
 
@@ -630,6 +632,55 @@ a:hover {
   border-radius: 50%;
 }
 
+.cart-section {
+    padding:24px;
+    background-color: rgb(18, 26, 132);
+    border-radius:20px;
+    color:white;
+
+}
+
+#orderButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color:red;
+    color:white;
+}
+
+#orderButton:hover {
+    background-color: #555;
+}
+
+#emptyCartButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color:red;
+    color:white;
+}
+
+#emptyCartButton:hover {
+    background-color: #555;
+}
+
+#removeFromCart {
+    padding: 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    background-color:red;
+    color:white;
+}
+
+#removeFromCart:hover {
+    background-color: #555;
+}
     `;
 
     private addNextPageProducts(): void {
@@ -639,14 +690,32 @@ a:hover {
         this.products = [...this.products, ...nextProducts];
     }
 
+    
+
+    private addToCart(product: Product): void {
+        const currentQuantity:any = this.cart.get(product) || 0;
+        this.cart.set(product, currentQuantity + 1); // Voeg één exemplaar van het product toe
+    
+        // Sla de inhoud van het winkelwagentje op in de sessie
+        sessionStorage.setItem("cart", JSON.stringify(Array.from(this.cart.entries())));
+    
+        this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
+    }
+
 
     protected render(): TemplateResult {
 
         const startIndex: number = (this.currentPage - 1) * this.productsPerPage;
         const endIndex: number = startIndex + this.productsPerPage;
         const productsToShow: Product[] = this.products.slice(startIndex, endIndex);
-
-        
+        const totalPrice: any = Array.from(this.cart.entries()).reduce((total, [product, quantity]) => {
+            return total + (parseFloat(product.price) * quantity);
+        }, 0);
+        const cartItems: any = Array.from(this.cart.entries()).map(([product, quantity]) => html`
+        <li>${product.name} - € ${product.price} x ${quantity}
+        <button id="removeFromCart" @click=${(): any => this.removeFromCart(product)}> Remove </button>
+    </li>
+    `);
         // Navbar & Filters HTML
 
         return html`
@@ -677,7 +746,18 @@ a:hover {
                     <li class="filter-option"><a href="#">Offers</a></li>
                 </ul>
 
-
+                <section class="cart-section">
+                <h2>Shoppingcart</h2>
+                <br>
+                <ul>
+                    ${cartItems}
+                </ul>
+                <br>
+                <p><strong>Total: € ${totalPrice.toFixed(2)}</strong></p>
+                <br>
+                <button id="orderButton" @click=${this.goToCheckout}>Checkout</button>
+                <button id="emptyCartButton" @click=${this.emptyCart}>Empty cart</button>
+            </section>
         <section class="product-section">
                     ${productsToShow.map(product => html`
                         <div class="product">
@@ -691,12 +771,13 @@ a:hover {
                                 </div>
                                 <div> 
                                     <span class="base-price">€ ${product.price}</span>
-                                    <button class="add-to-cart-button">In cart </button>
+                                    <button class="add-to-cart-button" @click=${(): void => this.addToCart(product)}>In cart</button>
                                 </div>
                             </div>
                         </div>
                     `)}
                 </section>
+
 
 
                  <!-- Paginatieknoppen -->
@@ -793,9 +874,38 @@ a:hover {
 
     }
 
+    private emptyCart(): void {
+        this.cart.clear(); // Maak het winkelwagentje leeg
+
+        // Verwijder het winkelwagentje uit de sessie
+        sessionStorage.removeItem("cart");
     
+        this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
+    }
     
+    private removeFromCart(product: Product): void {
+        const currentQuantity: any = this.cart.get(product) || 0;
+        if (currentQuantity > 1) {
+            this.cart.set(product, currentQuantity - 1); // Verwijder één exemplaar van het product
+        } else {
+            this.cart.delete(product); // Verwijder het product volledig als er nog maar één exemplaar van is
+        }
+        sessionStorage.setItem("cart", JSON.stringify(Array.from(this.cart.entries())));
+        
+        this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
+    }
+
+    private goToCheckout(): void {
+
+        window.location.href = "checkOut"; // Navigeer naar de bestelpagina
+    }
+
     protected firstUpdated(): void {
+        const storedCart:any = sessionStorage.getItem("cart");
+    if (storedCart) {
+        this.cart = new Map(JSON.parse(storedCart));
+        this.requestUpdate(); // Herbouw de weergave om de winkelwagen bij te werken
+    }
         // eslint-disable-next-line @typescript-eslint/typedef
         const shadowRoot = this.shadowRoot;
         if (shadowRoot) {

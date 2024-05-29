@@ -3,6 +3,7 @@ body {
     margin: 0;
 }
 
+<<<<<<< HEAD
 
 .navigationmenu {
     height: 100%;
@@ -29,9 +30,9 @@ body {
 }
 
 .navigationmenu a {
-    text-decoration: none;
+    text-decoration:solid;
     font-family: Verdana, sans-serif;
-    color: rgba(236,174,32,255);
+    color: white;
     font-size: 20px;
     padding: 10px 30px;
     width: 50%;
@@ -83,3 +84,5 @@ body {
     transform: translate(0, -11px) rotate(45deg);
     z-index: 5;
   }
+=======
+>>>>>>> 152d85a2522cac4196ac8a49b2d8d9de870c4e11
