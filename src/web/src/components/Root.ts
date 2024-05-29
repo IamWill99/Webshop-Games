@@ -290,7 +290,8 @@ export class Root extends LitElement {
             password: this._password,
             repeatPassword: "",
             firstName: "",
-            lastName: ""
+            lastName: "",
+            name: ""
         });
 
         if (result) {
