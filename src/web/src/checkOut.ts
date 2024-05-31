@@ -3,6 +3,7 @@ import { customElement } from "lit/decorators.js";
 
 @customElement("checkout-root")
 export class AboutUs extends LitElement {
+
     public static styles: CSSResult = css`
         /* Voeg hier je CSS-stijlen toe voor de "About Us"-pagina */
         * {
