@@ -14,4 +14,7 @@ export enum RouterPage {
     Library = "library",
     PersonalPage = "personalpage",
     Profile = "profile",
+    Header= "header",
+    Cart = "Cart",
+    Logout = "Logout"
 }

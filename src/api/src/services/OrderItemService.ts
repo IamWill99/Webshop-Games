@@ -16,6 +16,8 @@ import { getConnection, queryDatabase } from "./DatabaseService";
 
         const response: any[] = await queryDatabase(connection, "SELECT * FROM product;");
 
+      
+
         console.log(response);
     
         return response;
