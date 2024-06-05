@@ -102,6 +102,8 @@ export class UserService {
     public async getWelcome(): Promise<UserHelloResponse | undefined> {
         const token: string | undefined = this._tokenService.getToken();
 
+        console.log(token);
+        
         if (!token) {
             return undefined;
         }
