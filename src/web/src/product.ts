@@ -695,7 +695,17 @@ a:hover {
     private addToCart(product: Product): void {
         const currentQuantity:any = this.cart.get(product) || 0;
         this.cart.set(product, currentQuantity + 1); // Voeg één exemplaar van het product toe
-    
+        
+        const currentTime:any = new Date().getTime();
+        sessionStorage.setItem(`cart_${product.name}`, currentTime.toString());
+
+        // Start een timer om het item na een uur te verwijderen
+        setTimeout(() => {
+            this.removeFromCart(product);
+        }, 3600000); // 1 uur = 3600000 milliseconden
+
+            
+
         // Sla de inhoud van het winkelwagentje op in de sessie
         sessionStorage.setItem("cart", JSON.stringify(Array.from(this.cart.entries())));
     
