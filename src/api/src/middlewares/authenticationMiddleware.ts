@@ -26,15 +26,21 @@ export function handleTokenBasedAuthentication(
         return;
     }
 
+
     // Check if the token is valid
     let jwtToken: CustomJwtToken | undefined;
 
     try {
+      
+
         jwtToken = jwt.verify(
             authenticationToken,
             process.env.JWT_SECRET_KEY
         ) as CustomJwtToken;
+
     }
+
+
     catch {
         // Do nothing
     }
