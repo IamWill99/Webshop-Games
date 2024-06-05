@@ -14,8 +14,7 @@ router.get("/", (_, res) => {
 
 router.post("/users/register", (req, res) => userController.register(req, res));
 router.post("/users/login", (req, res) => userController.login(req, res));
-
-router.get("/orderItems", orderItemController.getAll);
+router.get("/orderItems",  (req, res) => orderItemController.getAll(req, res));
 
 // New route for"About Us"-page
 router.get("/AboutUs-root", (_, res) => {

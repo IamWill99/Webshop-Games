@@ -420,6 +420,10 @@ export class Root extends LitElement {
                             <ul>
                                 <li><a href="/shipping">Shipping</a></li>
                                 <li><a href="/returns">Returns</a></li>
+                                <li><a  @click=${(): void => {
+                                         this._currentPage = RouterPage.product;
+                                    }}>
+                                    Products</a></li>
                             </ul>
                         </div>
 
