@@ -216,6 +216,9 @@ export class Root extends LitElement {
     @state()
     public _cartItemsCount: number = 0;
 
+    @state()
+    public _Game : number = 0;
+
     private _userService: UserService = new UserService();
     private _orderItemService: OrderItemService = new OrderItemService();
     private _tokenService: TokenService = new TokenService();
@@ -303,6 +306,8 @@ export class Root extends LitElement {
         }
     }
 
+
+    
     /**
      * Handler for the cart button
      */
@@ -397,8 +402,9 @@ export class Root extends LitElement {
                         </div>
 
                         ${this.renderLoginInNav()} ${this.renderRegisterInNav()} ${this.renderCartInNav()}
-                        ${this.renderLogoutInNav()}
+                        ${this.renderLogoutInNav()}  ${this.renderGameNav()} 
                     </nav>
+                    
                 </header>
                 <main>${contentTemplate}</main>
                 <footer>Copyright &copy; Luca Stars 2024</footer>
@@ -565,11 +571,13 @@ export class Root extends LitElement {
      * @param orderItem Order item to render
      */
     private renderOrderItem(orderItem: OrderItem): TemplateResult {
+        console.log (orderItem);
         return html`
             <div class="order-item">
-                <h2>${orderItem.name}</h2>
+                <h2>${orderItem.title}</h2>
                 <p>${orderItem.description}</p>
-                 <img src="${orderItem.imageURLs}" alt="${orderItem.name}">
+
+                 <img src="${orderItem.image}" alt="${orderItem.title}">
                 ${this._isLoggedIn
                     ? html`<button @click=${async (): Promise<void> => await this.addItemToCart(orderItem)}>
                           Toevoegen aan winkelmandje
@@ -699,6 +707,21 @@ export class Root extends LitElement {
                 </div>
             `;
     }
+
+    private renderGameNav(): TemplateResult {
+        if (this._Game) {
+            return html``;
+        }
+
+        return html`<div
+                @click=${(): void => {
+                this._currentPage = RouterPage.product;
+            }}
+            >
+                <button>Game</button>
+            </div>`;
+    }
+
 
     /**
      * Renders the e-mail input field with change-tracking

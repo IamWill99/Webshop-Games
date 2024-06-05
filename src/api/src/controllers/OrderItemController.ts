@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import asyncHandler from "express-async-handler";
 import {OrderItemService} from "../services/OrderItemService";
 
 
@@ -13,7 +12,7 @@ export class OrderItemController {
      * @param _ Request object (unused)
      * @param res Response object
      */
-    public async getAll(_: Request, res: Response): void {
+    public async getAll(_: Request, res: Response): Promise<void> {
 
         const service: any = new OrderItemService();
 

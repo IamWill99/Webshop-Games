@@ -7,6 +7,7 @@ import {OrderItemService} from "../services/OrderItemService";
 // Dit wordt gebruikt om type-veiligheid te garanderen bij het werken met producten in de applicatie.
 
 interface Product {
+    images: unknown;
     title: string;
     imageUrl: string;
     description: string;
@@ -31,12 +32,12 @@ export class product extends LitElement {
 
 private cart: Map<Product, number> = new Map(); // Hier houden we het winkelwagentje bij
 
-private connectedCallback(): void {
+public connectedCallback(): void {
     super.connectedCallback();
     this.fetchProducts();
 }
 
-  private fetchProducts(): void {
+  public fetchProducts(): void {
     const service:OrderItemService = new OrderItemService();
 
     const result: any = service.getAll().then((value: any) => {
@@ -309,6 +310,11 @@ a:hover {
 #removeFromCart:hover {
     background-color: #555;
 }
+
+.small-images{
+    width: 100px;
+    height: 120px
+}
     `;
 
     private addNextPageProducts(): void {
@@ -347,22 +353,7 @@ a:hover {
 
         return html`
             <div class="wrapper">
-            <button onclick="window.location.href='index.html'">Back to Homepage</button>
-                <nav class="navbar">
-                    <div class="navbar-logo">
-                        <a href="#">
-                            <img src="/assets/img/logo.png" alt="Logo" class="logo">
-                        </a>
-                    </div>
-                    <ul class="navbar-links">
-                        <li><a href="product.html" class="selected">Games</a></li>
-                        <li><a href="#">Merchandise</a></li>
-                        <li><a href="#">News</a></li>
-                    </ul>
-                    <form class="nav-search">
-                        <input type="text" placeholder="Search" class="search-bar">
-                    </form>
-                </nav>
+            
 
                 <ul class="product-filter">
                     <li><span class="filter-title">Filter: </span></li>
@@ -388,7 +379,7 @@ a:hover {
         <section class="product-section">
                     ${productsToShow.map(product => html`
                         <div class="product">
-                            <img src="${product.imageUrl}" alt="${product.title}">
+                            <img src="${product.images}" alt="${product.title}" class="small-images">
                             <div class="buttons">
                                 <button class="more-info-button">More info</button>
                                 <div class="product-details">
