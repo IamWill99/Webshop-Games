@@ -8,7 +8,8 @@ import {OrderItemService} from "../services/OrderItemService";
 
 interface Product {
     images: unknown;
-    title: string;
+    thumbnail: unknown;
+    name: string;
     imageUrl: string;
     description: string;
     price: string;
@@ -345,7 +346,7 @@ a:hover {
             return total + (parseFloat(product.price) * quantity);
         }, 0);
         const cartItems: any = Array.from(this.cart.entries()).map(([product, quantity]) => html`
-        <li>${product.title} - € ${product.price} x ${quantity}
+        <li>${product.name} - € ${product.price} x ${quantity}
         <button id="removeFromCart" @click=${(): any => this.removeFromCart(product)}> Remove </button>
     </li>
     `);
@@ -379,11 +380,11 @@ a:hover {
         <section class="product-section">
                     ${productsToShow.map(product => html`
                         <div class="product">
-                            <img src="${product.images}" alt="${product.title}" class="small-images">
+                            <img src="${product.thumbnail}" alt="${product.name}" class="small-images">
                             <div class="buttons">
                                 <button class="more-info-button">More info</button>
                                 <div class="product-details">
-                                    <h3>${product.title}</h3>
+                                    <h3>${product.name}</h3>
                                     <br>
                                     <p class="product-description">${product.description}</p>
                                 </div>
