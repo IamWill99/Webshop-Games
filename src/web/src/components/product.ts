@@ -6,7 +6,7 @@ import {OrderItemService} from "../services/OrderItemService";
 // Elk product heeft een naam, een URL van een afbeelding, een beschrijving, en een prijs.
 // Dit wordt gebruikt om type-veiligheid te garanderen bij het werken met producten in de applicatie.
 
-interface Product {
+export interface Product {
     id: number;
     images: unknown;
     thumbnail: unknown;
