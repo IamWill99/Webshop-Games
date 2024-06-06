@@ -7,6 +7,7 @@ import {OrderItemService} from "../services/OrderItemService";
 // Dit wordt gebruikt om type-veiligheid te garanderen bij het werken met producten in de applicatie.
 
 interface Product {
+    id: number;
     images: unknown;
     thumbnail: unknown;
     name: string;
@@ -351,11 +352,11 @@ a:hover {
     </li>
     `);
         // Navbar & Filters HTML
-
+    
         return html`
             <div class="wrapper">
             
-
+    
                 <ul class="product-filter">
                     <li><span class="filter-title">Filter: </span></li>
                     <li class="filter-option"><a href="#">Genre</a></li>
@@ -364,7 +365,7 @@ a:hover {
                     <li class="filter-option"><a href="#">Price</a></li>
                     <li class="filter-option"><a href="#">Offers</a></li>
                 </ul>
-
+    
                 <section class="cart-section">
                 <h2>Shoppingcart</h2>
                 <br>
@@ -382,7 +383,7 @@ a:hover {
                         <div class="product">
                             <img src="${product.thumbnail}" alt="${product.name}" class="small-images">
                             <div class="buttons">
-                                <button class="more-info-button">More info</button>
+                                <button class="more-info-button" @click=${(): void => this.goToProductDetails(product.id)}>More info</button>
                                 <div class="product-details">
                                     <h3>${product.name}</h3>
                                     <br>
@@ -396,9 +397,9 @@ a:hover {
                         </div>
                     `)}
                 </section>
-
-
-
+    
+    
+    
                  <!-- Paginatieknoppen -->
                  <div class="pagination">
                     <a href="#" class="previous" @click=${this.navigateToPrevious}>&laquo; Previous</a>
@@ -408,6 +409,11 @@ a:hover {
             </div>
         `;
     }
+    
+    private goToProductDetails(productId: number): void {
+        window.location.href = `/product-details?id=${productId}`;
+    }
+    
 
     // Deze methode navigeert naar de vorige pagina met producten.
     // Het controleert eerst of de huidige pagina groter is dan 1.
