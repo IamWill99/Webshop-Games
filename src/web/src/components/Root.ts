@@ -21,6 +21,7 @@ enum RouterPage {
     Shipping = "shipping",
     Returns = "Returns", // New route for returns
     product = "product", // New route for returns
+    productDetails = "product-details",
 }
 
 /**
@@ -226,6 +227,7 @@ export class Root extends LitElement {
     private _email: string = "";
     private _password: string = "";
     private _name: string = "";
+    private _firstName: string = "";
 
     public async connectedCallback(): Promise<void> {
         super.connectedCallback();
@@ -376,6 +378,9 @@ export class Root extends LitElement {
                 break;
             case RouterPage.product: // Nieuwe case voor product
                 contentTemplate = html`<product-root></product-root>`;
+                break;
+            case RouterPage.product: // Nieuwe case voor product
+                contentTemplate = html`<product-details></product-details>`;
                 break;
             default:
                 contentTemplate = this.renderHome();
@@ -625,7 +630,7 @@ export class Root extends LitElement {
                         <input type="text" id="name" value=${this._name} @change=${this.onChangeName} />
                     </div>
 
-                    ${this.renderEmail()} ${this.renderPassword()}
+                    ${this.renderEmail()} ${this.renderPassword()} ${this.renderFirstName()}
 
                     <div>
                         <button @click="${this.submitRegisterForm}" type="submit">Registreer</button>
@@ -749,6 +754,13 @@ export class Root extends LitElement {
             </div>`;
     }
 
+    private renderFirstName(): TemplateResult {
+        return html`<div>
+        <label for="firstName">Firstname</label>
+        <input type="text" value=${this._firstName} @change=${this.onChangeFirstName} />
+    </div>`;
+    }
+
     /**
      * Handles changes to the e-mail input field
      */
@@ -769,7 +781,12 @@ export class Root extends LitElement {
     private onChangeName(event: InputEvent): void {
         this._name = (event.target as HTMLInputElement).value;
     }
+
+    private onChangeFirstName(event: InputEvent): void {
+        this._firstName = (event.target as HTMLInputElement).value;
+    }
 }
+
 
 
 //import {css} from "lit";
