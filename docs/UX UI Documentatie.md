@@ -53,7 +53,7 @@ Argumenten:
 
 **Focus op Basisontwerp:**
 
-De initiële focus lag op het creëren van een solide basisontwerp voor de game productpagina, waarbij de nadruk lag op het definiëren van de inhoud en de visuele aspecten.
+De focus lag op het creëren van een solide basisontwerp voor de game productpagina, waarbij de nadruk lag op het definiëren van de inhoud en de visuele aspecten.
 
 **Uitsluiting van Filteropties:**
 Filteropties werden niet overwogen in deze fase vanwege de prioriteit die werd gegeven aan het uiterlijk en de inhoud van de pagina. Dit kan worden gezien als een bewuste keuze om eerst de basisfunctionaliteit vast te stellen voordat aanvullende elementen werden toegevoegd.
