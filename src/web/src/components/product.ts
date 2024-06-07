@@ -33,6 +33,7 @@ export class product extends LitElement {
   @property() public products: any =[];
 
 private cart: Map<Product, number> = new Map(); // Hier houden we het winkelwagentje bij
+    public handleSortChange: unknown;
 
 public connectedCallback(): void {
     super.connectedCallback();
@@ -355,16 +356,23 @@ a:hover {
     
         return html`
             <div class="wrapper">
+
             
-    
-                <ul class="product-filter">
-                    <li><span class="filter-title">Filter: </span></li>
-                    <li class="filter-option"><a href="#">Genre</a></li>
-                    <li class="filter-option"><a href="#" class="selected">Rating</a></li>
-                    <li class="filter-option"><a href="#">Name</a></li>
-                    <li class="filter-option"><a href="#">Price</a></li>
-                    <li class="filter-option"><a href="#">Offers</a></li>
-                </ul>
+            <div class="page-content">
+            <section class="filters">
+
+            <p>Sort by: </p>
+
+            <br>
+            <select name="games-sort" id="gamesSort" @change=${this.handleSortChange}>
+            <option value="name">Name</option>
+            <option value="price">Price</option>
+            </select>
+
+            <br>
+            <br>
+        </section>
+            
     
                 <section class="cart-section">
                 <h2>Shoppingcart</h2>
