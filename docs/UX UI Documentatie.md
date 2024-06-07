@@ -85,7 +85,8 @@ De implementatie van filteropties omvatte niet alleen basisfunctionaliteit, maar
 
 **Evolutie door Feedback:**
 
-Het verslag illustreert een iteratief ontwerpproces waarbij het ontwerp evolueert op basis van gebruikersfeedback en inzichten die zijn opgedaan tijdens het onderzoeksproces.
+Het verslag laat zien hoe het ontwerp steeds verandert door feedback van gebruikers en inzichten die zijn verzameld tijdens het onderzoek.
+
 
 **Belang van Gebruikersgerichtheid:** De nadruk ligt op het begrijpen van de behoeften van gebruikers en het aanpassen van het ontwerp om aan deze behoeften te voldoen, wat blijkt uit het gebruik van gebruikersonderzoek en feedbackverzameling.
 
