@@ -11,3 +11,4 @@ Onze feedback was:
 - Goed dat de producten uit de database gehaald worden
 - Ga vaker in overleg met de productowner, om verwarring te voorkomen betreft de requirements.
 
+Wat we gaan doen met deze feedback is dat we de volgende keer gaan kijken of de wishes van de product owner haalbaar zijn en hoelang dat gaat duren. Ook is het belangerijk dat we kijken wat er allemaal eerst nodig is om af te maken voordat we de eis vna de product owner af kan worden gemaakt. En als dit niet op tijd lukt is het belangrijk dat we het bespreken met de product owner en dat we gaan kijken hoe we het kunnen indelen en in welke sprint we de requirement af kunnen krijgen.
