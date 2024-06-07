@@ -1,8 +1,11 @@
-#Think (Denk):
+#Think Make Check Cycle
+
+**Think (Denk):**
 
 Actie: Ik heb gebruikers gevraagd wat ze nodig hebben op de pagina waar games worden verkocht. Ze vertelden me dat ze het moeilijk vinden om te navigeren zonder filteropties.
 
-Make (Maak):
+**Make (Maak):**
+
 Actie: Ik besloot om filteropties toe te voegen aan de pagina om het gemakkelijker te maken voor gebruikers om te vinden wat ze zoeken.
 
 **Check (Controleer):**
