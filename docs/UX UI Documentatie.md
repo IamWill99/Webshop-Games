@@ -53,42 +53,30 @@ Argumenten:
 
 **Focus op Basisontwerp:**
 
-De focus lag op het creëren van een solide basisontwerp voor de game productpagina, waarbij de nadruk lag op het definiëren van de inhoud en de visuele aspecten.
+**Focus op Basisontwerp:** In deze eerste fase richt ik me vooral op het creëren van het basisontwerp van de game productpagina. Ik denk niet aan filteropties omdat ik me vooral bezighoud met hoe de pagina eruit moet zien en wat erop moet staan.
 
-**Uitsluiting van Filteropties:**
-Filteropties werden niet overwogen in deze fase vanwege de prioriteit die werd gegeven aan het uiterlijk en de inhoud van de pagina. Dit kan worden gezien als een bewuste keuze om eerst de basisfunctionaliteit vast te stellen voordat aanvullende elementen werden toegevoegd.
+**Uitsluiting van Filteropties:** Filteropties zijn niet in gedachten omdat ik me concentreer op andere aspecten van het ontwerp. Ik begin me echter te realiseren dat ze belangrijk kunnen zijn voor een betere gebruikerservaring.
 
-**Ontdekte Navigatiebehoefte:**
-Het ontbreken van filteropties werd pas opgemerkt nadat het basisontwerp was voltooid, waardoor het inzicht ontstond dat deze functies cruciaal zijn voor een efficiënte navigatie en zoekervaring voor gebruikers.
+**Ontdekte Navigatiebehoefte:** Wanneer ik merk dat er geen filteropties zijn, begin ik me te realiseren dat ze de navigatie en zoekervaring voor gebruikers kunnen verbeteren.
 
 # Sprint 2: Verbeteringen en Aanpassingen Argumenten:
 
-**Reactie op Feedback:**
-De beslissingen in deze fase waren voornamelijk gebaseerd op feedback die was ontvangen na de eerste implementatie. Hierdoor werd de nadruk gelegd op het verbeteren van de visuele aantrekkelijkheid en de bruikbaarheid van de pagina.
+**Reactie op Feedback:** In de volgende fase verbeter ik het ontwerp van de game productpagina op basis van ontvangen feedback. Ik werk vooral aan de visuele aspecten en de gebruikersinteractie.
 
-**Voortdurend Bewustzijn**
-Ondanks dat er geen concrete actie werd ondernomen om filteropties toe te voegen, groeide het bewustzijn van hun belang voor een betere gebruikerservaring.
+**Voortdurend Bewustzijn:** Ondanks het ontbreken van concrete actie om filteropties toe te voegen, groeit mijn bewustzijn van hun belang voor een betere gebruikerservaring.
 
 # Sprint 3: Toevoeging van Filteropties na Gebruikersonderzoek Argumenten:
 
-**Gebruikersonderzoek als Katalysator:**
-Na het uitvoeren van gebruikersonderzoek werd duidelijk dat filteropties essentieel waren voor het verbeteren van de gebruikerservaring. Dit onderzoek fungeerde als een katalysator voor het nemen van concrete beslissingen om deze functies toe te voegen.
+**Gebruikersonderzoek:** Na het uitvoeren van gebruikersonderzoek, zie ik dat filteropties essentieel zijn voor een betere gebruikerservaring op de game productpagina. Daarom besluit ik filteropties toe te voegen op basis van gebruikersfeedback.
 
-**Concreet Besluit:**
-Op basis van de onderzoeksresultaten werden filteropties toegevoegd voor games op basis van naam en prijs, wat aantoont dat de ontwerpbeslissingen werden geleid door gegevens en gebruikersbehoeften.
-
-**Uitgebreide Implementatie:**
-De implementatie van filteropties omvatte niet alleen basisfunctionaliteit, maar ook opties voor sorteren op prijs, wat aantoont dat er grondig werd nagedacht over de manier waarop gebruikers hun zoekopdrachten kunnen verfijnen.
+**Concreet Besluit:** Op basis van onderzoeksresultaten voeg ik filteropties toe, zoals filteren op naam en prijs, en het sorteren op prijs van goedkoop naar duur en andersom. Ik zorg ervoor dat deze opties goed werken wanneer gebruikers ze gebruiken.
 
 
 # Algemeen Argumenten:
 
-**Evolutie door Feedback:**
+**Evolutie door Feedback:** Het verslag toont hoe het ontwerp voortdurend evolueert door feedback van gebruikers en inzichten uit onderzoek.
 
-Het verslag laat zien hoe het ontwerp steeds verandert door feedback van gebruikers en inzichten die zijn verzameld tijdens het onderzoek.
+Belang van Gebruikersgerichtheid: Ik leg de nadruk op het begrijpen van de behoeften van gebruikers en pas het ontwerp dienovereenkomstig aan, gebaseerd op onderzoek en feedback.
 
-
-**Belang van Gebruikersgerichtheid:** De nadruk ligt op het begrijpen van de behoeften van gebruikers en het aanpassen van het ontwerp om aan deze behoeften te voldoen, wat blijkt uit het gebruik van gebruikersonderzoek en feedbackverzameling.
-
-**Continu Leren en Aanpassen:** De conclusie benadrukt het belang van voortdurend leren en aanpassen om de gebruikerservaring te verbeteren, wat aantoont dat het ontwerpproces niet statisch is maar zich blijft ontwikkelen in reactie op nieuwe inzichten.
+**Continu Leren en Aanpassen:** Ik benadruk het belang van voortdurend leren en aanpassen om de gebruikerservaring te verbeteren, waardoor het ontwerpproces zich blijft ontwikkelen in reactie op nieuwe inzichten.
 
