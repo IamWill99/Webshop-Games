@@ -48,8 +48,7 @@ Door feedback te krijgen en te blijven leren, pas ik mijn ontwerpen steeds aan.
 Onderzoek onder gebruikers is belangrijk om te begrijpen wat zij nodig hebben en om dat te verwerken in het ontwerp.
 
 
-# Sprint 1: Eerste Ontwerpbeslissingen
-Argumenten:
+# Sprint 1: Eerste Ontwerpbeslissingen Argumenten:
 
 **Focus op Basisontwerp:**
 
