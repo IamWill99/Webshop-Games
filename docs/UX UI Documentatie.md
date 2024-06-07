@@ -91,5 +91,5 @@ Het verslag illustreert een iteratief ontwerpproces waarbij het ontwerp evolueer
 
 De nadruk ligt op het begrijpen van de behoeften van gebruikers en het aanpassen van het ontwerp om aan deze behoeften te voldoen, wat blijkt uit het gebruik van gebruikersonderzoek en feedbackverzameling.
 
-Continu Leren en Aanpassen: De conclusie benadrukt het belang van voortdurend leren en aanpassen om de gebruikerservaring te verbeteren, wat aantoont dat het ontwerpproces niet statisch is maar zich blijft ontwikkelen in reactie op nieuwe inzichten.
+**Continu Leren en Aanpassen:** De conclusie benadrukt het belang van voortdurend leren en aanpassen om de gebruikerservaring te verbeteren, wat aantoont dat het ontwerpproces niet statisch is maar zich blijft ontwikkelen in reactie op nieuwe inzichten.
 
