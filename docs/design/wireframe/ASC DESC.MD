@@ -1,4 +1,4 @@
-Hier is een prototype met ASC en DESC op de productpagina
+Hier is een prototype met Sort By: ASC en DESC op de productpagina
 
 
 Webpage Prototype
