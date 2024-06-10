@@ -1,6 +1,6 @@
 import { LitElement, html, css, TemplateResult, CSSResult } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import {OrderItemService} from "../services/OrderItemService";
+import { OrderItemService } from "../services/OrderItemService";
 
 // De Product interface definieert de structuur van een product object.
 // Elk product heeft een naam, een URL van een afbeelding, een beschrijving, en een prijs.
@@ -16,6 +16,10 @@ interface Product {
     price: string;
 }
 
+interface HTMLSelectEvent extends Event {
+    target: HTMLSelectElement;
+}
+
 
 
 @customElement("product-root")
@@ -29,30 +33,48 @@ export class product extends LitElement {
 
 
 
-  // Definieer en initialiseer de array met producten
-  @property() public products: any =[];
+    // Definieer en initialiseer de array met producten
+    @property() public products: any = [];
 
-private cart: Map<Product, number> = new Map(); // Hier houden we het winkelwagentje bij
-    public handleSortChange: unknown;
+    private cart: Map<Product, number> = new Map(); // Hier houden we het winkelwagentje bij
 
-public connectedCallback(): void {
-    super.connectedCallback();
-    this.fetchProducts();
-}
 
-  public fetchProducts(): void {
-    const service:OrderItemService = new OrderItemService();
 
-    const result: any = service.getAll().then((value: any) => {
-        console.log(value);
 
-        this.products = value;
-    }).catch((error) => {
-        console.log(error);
-    });
-   
-    console.log(result);
-}
+    // public handleSortChange(event: HTMLSelectEvent): void {
+    //     this.products.type = event.target.value;
+    //     this.requestUpdate();
+    //     console.log("het werkt");
+    // }
+
+    private handleSortChange(event: HTMLSelectEvent): void {
+        this.products = event.target.value;
+        console.log("Selected sort type:", this.products);
+        this.requestUpdate();
+    }
+
+
+
+
+
+    public connectedCallback(): void {
+        super.connectedCallback();
+        this.fetchProducts();
+    }
+
+    public fetchProducts(): void {
+        const service: OrderItemService = new OrderItemService();
+
+        const result: any = service.getAll().then((value: any) => {
+            console.log(value);
+
+            this.products = value;
+        }).catch((error) => {
+            console.log(error);
+        });
+
+        console.log(result);
+    }
 
 
     public static styles: CSSResult = css`
@@ -327,15 +349,15 @@ a:hover {
         this.products = [...this.products, ...nextProducts];
     }
 
-    
+
 
     private addToCart(product: Product): void {
-        const currentQuantity:any = this.cart.get(product) || 0;
+        const currentQuantity: any = this.cart.get(product) || 0;
         this.cart.set(product, currentQuantity + 1); // Voeg één exemplaar van het product toe
-    
+
         // Sla de inhoud van het winkelwagentje op in de sessie
         sessionStorage.setItem("cart", JSON.stringify(Array.from(this.cart.entries())));
-    
+
         this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
     }
 
@@ -353,26 +375,27 @@ a:hover {
     </li>
     `);
         // Navbar & Filters HTML
-    
+
         return html`
             <div class="wrapper">
 
             
             <div class="page-content">
-            <section class="filters">
+        <!-- <section class="filters"> -->
 
-            <p>Sort by: </p>
+        <h2>Sort by:</h2>
 
-            <br>
-            <select name="games-sort" id="gamesSort" @change=${this.handleSortChange}>
-            <option value="name">Name</option>
-            <option value="price">Price</option>
-            </select>
 
-            <br>
-            <br>
-        </section>
             
+    <select id="type" @change="${this.handleSortChange}">
+                   
+    <option value="ascending">Ascending</option>
+    <option value="descending">Descending</option>
+                  
+                </select>
+
+                <br>
+                <br>
     
                 <section class="cart-section">
                 <h2>Shoppingcart</h2>
@@ -417,11 +440,11 @@ a:hover {
             </div>
         `;
     }
-    
+
     private goToProductDetails(productId: number): void {
         window.location.href = `/product-details?id=${productId}`;
     }
-    
+
 
     // Deze methode navigeert naar de vorige pagina met producten.
     // Het controleert eerst of de huidige pagina groter is dan 1.
@@ -435,7 +458,7 @@ a:hover {
         }
     }
 
-    
+
 
     // Deze methode navigeert naar de volgende pagina met producten.
     // Het berekent eerst het totale aantal pagina's op basis van het aantal producten en producten per pagina.
@@ -445,16 +468,16 @@ a:hover {
 
 
     private navigateToNext(): void {
-        const totalPages: number = 5; 
+        const totalPages: number = 5;
         Math.ceil(this.products.length / this.productsPerPage);
         if (this.currentPage < totalPages) {
             this.currentPage++;
 
-             // Voeg nieuwe producten toe voordat je de weergave bijwerkt
-             this.addNextPageProducts();
+            // Voeg nieuwe producten toe voordat je de weergave bijwerkt
+            this.addNextPageProducts();
 
             this.requestUpdate(); // Herbouw de weergave om de nieuwe pagina te tonen
-        }  else {
+        } else {
             // De huidige pagina is de laatste pagina, dus doe niets
             console.log("Dit is de laatste pagina. Kan niet verder gaan.");
         }
@@ -466,10 +489,10 @@ a:hover {
 
         // Verwijder het winkelwagentje uit de sessie
         sessionStorage.removeItem("cart");
-    
+
         this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
     }
-    
+
     private removeFromCart(product: Product): void {
         const currentQuantity: any = this.cart.get(product) || 0;
         if (currentQuantity > 1) {
@@ -478,7 +501,7 @@ a:hover {
             this.cart.delete(product); // Verwijder het product volledig als er nog maar één exemplaar van is
         }
         sessionStorage.setItem("cart", JSON.stringify(Array.from(this.cart.entries())));
-        
+
         this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
     }
 
@@ -488,16 +511,16 @@ a:hover {
     }
 
     protected firstUpdated(): void {
-        const storedCart:any = sessionStorage.getItem("cart");
-    if (storedCart) {
-        this.cart = new Map(JSON.parse(storedCart));
-        this.requestUpdate(); // Herbouw de weergave om de winkelwagen bij te werken
-    }
+        const storedCart: any = sessionStorage.getItem("cart");
+        if (storedCart) {
+            this.cart = new Map(JSON.parse(storedCart));
+            this.requestUpdate(); // Herbouw de weergave om de winkelwagen bij te werken
+        }
         // eslint-disable-next-line @typescript-eslint/typedef
         const shadowRoot = this.shadowRoot;
         if (shadowRoot) {
             const moreInfoButtons: NodeListOf<HTMLButtonElement> | null = shadowRoot.querySelectorAll(".more-info-button");
-    
+
             if (moreInfoButtons) {
                 moreInfoButtons.forEach((button: HTMLButtonElement) => {
                     button.addEventListener("click", () => {
@@ -510,7 +533,7 @@ a:hover {
                                 // eslint-disable-next-line @typescript-eslint/typedef
                                 const descriptionElement = productDescription as HTMLElement;
                                 if (descriptionElement.style.display === "none" || !descriptionElement.style.display) {
-                                    descriptionElement.style.display ="block";
+                                    descriptionElement.style.display = "block";
                                 } else {
                                     descriptionElement.style.display = "none";
                                 }
@@ -520,8 +543,8 @@ a:hover {
                 });
             }
         }
-        
+
     }
- 
-    
+
+
 }

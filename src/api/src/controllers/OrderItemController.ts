@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import {OrderItemService} from "../services/OrderItemService";
+import { OrderItemService } from "../services/OrderItemService";
 
 
 /**
@@ -12,7 +12,10 @@ export class OrderItemController {
      * @param _ Request object (unused)
      * @param res Response object
      */
-    public async getAll(_: Request, res: Response): Promise<void> {
+    public async getAll(_req: Request, res: Response): Promise<void> {
+        const sortOn: string = (_req.query.sort as string);
+
+        console.log("Query?", sortOn);
 
         const service: any = new OrderItemService();
 

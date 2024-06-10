@@ -11,7 +11,7 @@ export class OrderItemService {
      * @returns A list of all order items when successful, otherwise `undefined`.
      */
     public async getAll(): Promise<OrderItem[] | undefined> {
-        const response: Response = await fetch(`${viteConfiguration.API_URL}orderItems`, {
+        const response: Response = await fetch(`${ viteConfiguration.API_URL }orderItems?sort=asc`, {
             method: "get",
         });
 
@@ -26,27 +26,5 @@ export class OrderItemService {
 }
 
 
-// import { getConnection, queryDatabase } from "../services/DatabaseService";
-// import { PoolConnection } from "mysql2/promise";
-
-// interface OrderItem {
-//     id: number;
-//     orderId: number;
-//     productId: number;
-//     quantity: number;
-//     price: number;
-// }
-
-// class OrderItemService {
-//     public async getAllOrderItems(): Promise<OrderItem[]> {
-//         const connection: PoolConnection = await getConnection();
-//         const query: string = "SELECT * FROM product"; 
-//         const results: OrderItem[] = await queryDatabase<OrderItem[]>(connection, query);
-//         connection.release();
-//         return results;
-//     }
-// }
-
-// export default new OrderItemService();
 
 
