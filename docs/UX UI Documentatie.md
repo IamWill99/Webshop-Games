@@ -31,13 +31,12 @@ Hoewel ik nog geen filteropties had, begon ik me wel bewust te worden van hoe be
 
 Na het doen van onderzoek onder gebruikers, zag ik dat filteropties echt nodig waren voor een betere gebruikerservaring op de game productpagina.
 
-Daarom heb ik besloten om filteropties toe te voegen voor games op basis van naam en prijs.
+Daarom heb ik besloten om filteropties toe te voegen voor games op basis van oploppend en aflopend.
 
 **Resultaten:**
 
-Ik heb een filter knop gemaakt waarin gebruikers games kunnen filteren op naam, prijs, oplopend/aflopend.
+Ik heb een filter knop gemaakt waarin gebruikers games kunnen filteren op oplopend/aflopend.
 
-Ook heb ik opties toegevoegd om games te sorteren op prijs, van goedkoop naar duur en andersom.
 
 Ik heb gesproken met docenten om ervoor te zorgen dat de filterknop goed werkt als je erop klikt.
 
@@ -68,7 +67,7 @@ Onderzoek onder gebruikers is belangrijk om te begrijpen wat zij nodig hebben en
 
 **Gebruikersonderzoek:** Na het uitvoeren van gebruikersonderzoek, zie ik dat filteropties essentieel zijn voor een betere gebruikerservaring op de game productpagina. Daarom besluit ik filteropties toe te voegen op basis van gebruikersfeedback.
 
-**Concreet Besluit:** Op basis van onderzoeksresultaten voeg ik filteropties toe, zoals filteren op naam en prijs, en het sorteren op prijs van goedkoop naar duur en andersom. Ik zorg ervoor dat deze opties goed werken wanneer gebruikers ze gebruiken.
+**Concreet Besluit:** Op basis van onderzoeksresultaten voeg ik filteropties toe, zoals filteren op oploppend en aflopend.Ik zorg ervoor dat deze opties goed werken wanneer gebruikers ze gebruiken..
 
 
 # Algemeen Argumenten:
