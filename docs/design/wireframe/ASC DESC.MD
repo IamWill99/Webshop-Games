@@ -7,6 +7,8 @@ Webpage Prototype
 │   ├── Login
 │   ├── Register
 │   └── Game
+
+
 ├── Sort
 │   ├── Dropdown menu
 │       ├── Ascending
@@ -36,5 +38,6 @@ Webpage Prototype
         └── More info button
 
 ![Ascending priview](ASC.png)
+![Descending priview](DESC.png)
 
         
