@@ -1,4 +1,4 @@
-
+Hier is een prototype met ASC en DESC op de productpagina
 
 
 Webpage Prototype
@@ -7,8 +7,6 @@ Webpage Prototype
 │   ├── Login
 │   ├── Register
 │   └── Game
-
-
 ├── Sort
 │   ├── Dropdown menu
 │       ├── Ascending
