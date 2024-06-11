@@ -1,0 +1,85 @@
+/* checkOut.css */
+
+/* Algemene opmaak */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    background-color: rgba(18, 26, 132); /* Semi-transparante achtergrondkleur */
+    color: #fff; /* Tekstkleur wit voor contrast */
+    padding: 10px;
+    border-radius: 8px; /* Afgeronde hoeken toegevoegd */
+    margin: 20px auto; /* Midden uitlijnen */
+    max-width: 600px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Achtergrondkleur voor tekstgedeelten */
+#checkout-list,
+#total-price {
+    background-color: rgba(18, 26, 132); /* Semi-transparante achtergrondkleur */
+    color: #fff; /* Tekstkleur wit voor contrast */
+    padding: 10px;
+    border-radius: 8px; /* Afgeronde hoeken toegevoegd */
+    margin: 20px auto; /* Midden uitlijnen */
+    max-width: 600px;
+}
+
+/* Opmaak voor de lijst met producten */
+#checkout-list {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Opmaak voor individuele producten in de lijst */
+#checkout-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Lichtere scheiding tussen producten */
+    padding-bottom: 5px;
+    transition: background-color 0.3s; /* Overgangseffect toegevoegd */
+}
+
+#checkout-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Achtergrondkleur verandert bij hover */
+}
+
+/* Opmaak voor de totaalprijs */
+#total-price {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Opmaak voor de winkelwageninhoud sectie */
+#cart-items {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Aangepaste knopstijl */
+.button {
+    background-color: #1a73e8; /* Google blauwe kleur */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0f62fe; /* Donkerdere tint bij hover */
+}
+

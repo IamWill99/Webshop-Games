@@ -23,6 +23,9 @@ export class product extends LitElement {
 
     private currentPage: number = 1;
     private productsPerPage: number = 9; // Bijvoorbeeld, 9 producten per pagina
+    private cartTimeout: number = 3600000; // 1 uur in milliseconden
+    private cartTimer: number | undefined;
+    private intervalId: number | undefined;
 
     public _userService: any;
     public _cartItemsCount: number | undefined;
@@ -31,12 +34,16 @@ export class product extends LitElement {
 
   // Definieer en initialiseer de array met producten
   @property() public products: any =[];
+  @property({ type: Number }) public remainingTime: number = this.cartTimeout; // Resterende tijd in milliseconden
+
 
 private cart: Map<Product, number> = new Map(); // Hier houden we het winkelwagentje bij
 
 public connectedCallback(): void {
     super.connectedCallback();
     this.fetchProducts();
+    this.checkCartExpiry();
+    this.startCartTimer();
 }
 
   public fetchProducts(): void {
@@ -53,6 +60,7 @@ public connectedCallback(): void {
     console.log(result);
 }
 
+    
 
     public static styles: CSSResult = css`
         /* Voeg hier je CSS-stijlen toe voor de "Product Page"-pagina */
@@ -334,8 +342,11 @@ a:hover {
     
         // Sla de inhoud van het winkelwagentje op in de sessie
         sessionStorage.setItem("cart", JSON.stringify(Array.from(this.cart.entries())));
-    
+        sessionStorage.setItem("cartLastUpdated", new Date().toISOString());
+
         this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
+        this.startCartTimer(); // Reset de timer bij elke update
+
     }
 
 
@@ -356,7 +367,8 @@ a:hover {
         return html`
             <div class="wrapper">
             
-    
+                
+
                 <ul class="product-filter">
                     <li><span class="filter-title">Filter: </span></li>
                     <li class="filter-option"><a href="#">Genre</a></li>
@@ -377,6 +389,7 @@ a:hover {
                 <br>
                 <button id="orderButton" @click=${this.goToCheckout}>Checkout</button>
                 <button id="emptyCartButton" @click=${this.emptyCart}>Empty cart</button>
+                <h4>Products in your shoppingcart are reserved for one hour.</h4>
             </section>
         <section class="product-section">
                     ${productsToShow.map(product => html`
@@ -392,13 +405,14 @@ a:hover {
                                 <div> 
                                     <span class="base-price">€ ${product.price}</span>
                                     <button class="add-to-cart-button" @click=${(): void => this.addToCart(product)}>In cart</button>
+                                    
                                 </div>
                             </div>
                         </div>
                     `)}
                 </section>
-    
-    
+                
+                
     
                  <!-- Paginatieknoppen -->
                  <div class="pagination">
@@ -454,30 +468,82 @@ a:hover {
     }
 
     private emptyCart(): void {
-        this.cart.clear(); // Maak het winkelwagentje leeg
-
-        // Verwijder het winkelwagentje uit de sessie
+        this.cart.clear();
         sessionStorage.removeItem("cart");
-    
-        this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
+        sessionStorage.removeItem("cartExpiryTime");
+
+        clearTimeout(this.cartTimer);
+        clearInterval(this.intervalId);
+        this.remainingTime = this.cartTimeout;
+
+        this.requestUpdate();
     }
+
     
     private removeFromCart(product: Product): void {
         const currentQuantity: any = this.cart.get(product) || 0;
         if (currentQuantity > 1) {
-            this.cart.set(product, currentQuantity - 1); // Verwijder één exemplaar van het product
+            this.cart.set(product, currentQuantity - 1);
         } else {
-            this.cart.delete(product); // Verwijder het product volledig als er nog maar één exemplaar van is
+            this.cart.delete(product);
         }
         sessionStorage.setItem("cart", JSON.stringify(Array.from(this.cart.entries())));
-        
-        this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
+        this.requestUpdate();
     }
 
     private goToCheckout(): void {
 
         window.location.href = "checkOut"; // Navigeer naar de bestelpagina
     }
+
+    private checkCartExpiry(): void {
+        const savedCart:any = sessionStorage.getItem("cart");
+        const savedTime:any = sessionStorage.getItem("cartExpiryTime");
+
+        if (savedCart && savedTime) {
+            const now:any = new Date().getTime();
+            const expiryTime:any = parseInt(savedTime);
+
+            if (now > expiryTime) {
+                this.emptyCart();
+            } else {
+                this.cart = new Map(JSON.parse(savedCart));
+                this.remainingTime = expiryTime - now;
+                this.requestUpdate();
+            }
+        }
+    }
+
+    private startCartTimer(): void {
+        clearTimeout(this.cartTimer);
+
+        const savedTime:any = sessionStorage.getItem("cartExpiryTime");
+        const now:any = new Date().getTime();
+        this.remainingTime = savedTime ? Math.max(0, parseInt(savedTime) - now) : this.cartTimeout;
+
+        if (this.remainingTime <= 0) {
+            this.emptyCart();
+        } else {
+            this.cartTimer = window.setTimeout(() => {
+                this.emptyCart();
+            }, this.remainingTime);
+
+            this.updateRemainingTime();
+        }
+    }
+
+    private updateRemainingTime(): void {
+        this.intervalId = window.setInterval(() => {
+            if (this.remainingTime > 0) {
+                this.remainingTime -= 1000;
+                this.requestUpdate();
+            } else {
+                clearInterval(this.intervalId);
+            }
+        }, 1000);
+    }
+
+    
 
     protected firstUpdated(): void {
         const storedCart:any = sessionStorage.getItem("cart");
@@ -517,3 +583,4 @@ a:hover {
  
     
 }
+
