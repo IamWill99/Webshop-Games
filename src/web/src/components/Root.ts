@@ -250,7 +250,7 @@ export class Root extends LitElement {
      * Get all available order items
      */
     private async getOrderItems(): Promise<void> {
-        const result: OrderItem[] | undefined = await this._orderItemService.getAll();
+        const result: OrderItem[] | undefined = await this._orderItemService.getAll("ASC");
 
         if (!result) {
             return;

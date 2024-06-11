@@ -19,7 +19,7 @@ export class OrderItemController {
 
         const service: any = new OrderItemService();
 
-        const result: any = await service.getAll();
+        const result: any = await service.getAll(sortOn);
 
         res.json(result);
     }

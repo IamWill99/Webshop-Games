@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { OrderItem } from "@shared/types";
 import { getConnection, queryDatabase } from "./DatabaseService";
 
@@ -10,11 +11,28 @@ export class OrderItemService {
      * 
      * @returns A list of all order items when successful, otherwise `undefined`.
      */
-    public async getAll(sortOn: any): Promise<OrderItem[] | undefined> {
+    public async getAll(sortOn: string): Promise<OrderItem[] | undefined> {
+        console.log("sortOn", sortOn);
 
         const connection: any = await getConnection();
 
-        const response: any[] = await queryDatabase(connection, "SELECT * FROM product ORDER BY name ASC;", sortOn);
+        let query: string = "SELECT * FROM product;";
+
+        switch (sortOn) {
+            case "ASC": {
+                query = "SELECT * FROM product ORDER BY name ASC; ";
+                break;
+            }
+
+            case "DESC": {
+                query = "SELECT * FROM product ORDER BY name DESC; ";
+                break;
+            }
+
+        }
+
+
+        const response: any[] = await queryDatabase(connection, query, sortOn);
 
 
 

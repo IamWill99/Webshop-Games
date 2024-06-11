@@ -34,23 +34,15 @@ export class product extends LitElement {
 
 
     // Definieer en initialiseer de array met producten
-    @property() public products: any = [];
+    @property({ type: Array }) public products: Product[] = [];
 
     private cart: Map<Product, number> = new Map(); // Hier houden we het winkelwagentje bij
 
 
-
-
-    // public handleSortChange(event: HTMLSelectEvent): void {
-    //     this.products.type = event.target.value;
-    //     this.requestUpdate();
-    //     console.log("het werkt");
-    // }
-
     private handleSortChange(event: HTMLSelectEvent): void {
-        this.products = event.target.value;
-        console.log("Selected sort type:", this.products);
-        this.requestUpdate();
+        const sortingOrder: string = event.target.value;
+        console.log("Selected sort type:", sortingOrder);
+        this.fetchProducts(sortingOrder);
     }
 
 
@@ -59,13 +51,13 @@ export class product extends LitElement {
 
     public connectedCallback(): void {
         super.connectedCallback();
-        this.fetchProducts();
+        this.fetchProducts("ASC");
     }
 
-    public fetchProducts(): void {
+    public fetchProducts(sortingOrder: string): void {
         const service: OrderItemService = new OrderItemService();
 
-        const result: any = service.getAll().then((value: any) => {
+        const result: any = service.getAll(sortingOrder).then((value: any) => {
             console.log(value);
 
             this.products = value;
@@ -387,10 +379,10 @@ a:hover {
 
 
             
-    <select id="type" @change="${this.handleSortChange}">
+        <select id="type" @change="${this.handleSortChange}">
                    
-    <option value="ascending">Ascending</option>
-    <option value="descending">Descending</option>
+        <option value="ASC">Ascending</option>
+        <option value="DESC">Descending</option>
                   
                 </select>
 
