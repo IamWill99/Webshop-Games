@@ -35,7 +35,6 @@ Webpage Prototype
         ├── Price
         ├── Add to cart button
         └── More info button
-        
     ![Ascending priview](ASC.png)
-    ![Descending priview](DESC.png)
+ ![Descending priview](DESC.png)
 
