@@ -12,7 +12,7 @@ export class OrderItemService {
      */
         public async getAll(sortingOrder: string): Promise<OrderItem[] | undefined> {
             
-        const response: Response = await fetch(`${ viteConfiguration.API_URL }orderItems?sort= ${sortingOrder }`, {
+        const response: Response = await fetch(`${ viteConfiguration.API_URL }orderItems?sort=${sortingOrder}`, {
             method: "get",
         });
 
