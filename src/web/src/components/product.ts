@@ -54,7 +54,7 @@ export class product extends LitElement {
 
 public connectedCallback(): void {
     super.connectedCallback();
-    this.fetchProducts();
+    this.fetchProducts("ASC");
 }
 
     public fetchProducts(sortingOrder: string): void {
@@ -377,14 +377,20 @@ a:hover {
             <div class="wrapper">
             
     
-                <ul class="product-filter">
-                    <li><span class="filter-title">Filter: </span></li>
-                    <li class="filter-option"><a href="#">Genre</a></li>
-                    <li class="filter-option"><a href="#" class="selected">Rating</a></li>
-                    <li class="filter-option"><a href="#">Name</a></li>
-                    <li class="filter-option"><a href="#">Price</a></li>
-                    <li class="filter-option"><a href="#">Offers</a></li>
-                </ul>
+            <h2>Sort by:</h2>
+
+
+            
+    <select id="type" @change="${this.handleSortChange}">
+           
+    <option value="ASC">Ascending</option>
+    <option value="DESC">Descending</option>
+          
+        </select>
+
+        <br>
+        <br>
+
     
                 <section class="cart-section">
                 <h2>Shoppingcart</h2>
