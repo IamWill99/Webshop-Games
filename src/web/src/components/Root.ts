@@ -21,6 +21,7 @@ enum RouterPage {
     Shipping = "shipping",
     Returns = "Returns", // New route for returns
     product = "product", // New route for returns
+    productDetails = "product-details",
 }
 
 /**
@@ -377,6 +378,9 @@ export class Root extends LitElement {
                 break;
             case RouterPage.product: // Nieuwe case voor product
                 contentTemplate = html`<product-root></product-root>`;
+                break;
+            case RouterPage.product: // Nieuwe case voor product
+                contentTemplate = html`<product-details></product-details>`;
                 break;
             default:
                 contentTemplate = this.renderHome();

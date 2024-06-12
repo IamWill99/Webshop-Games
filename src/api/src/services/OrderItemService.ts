@@ -23,5 +23,3 @@ import { getConnection, queryDatabase } from "./DatabaseService";
         return response;
     }
 }
-
-
