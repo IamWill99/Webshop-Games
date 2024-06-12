@@ -81,6 +81,7 @@ export class Root extends LitElement {
             .hero-image {
                 background: lightgrey;
                 height: 500px;
+                background-image: URL("https://lucastars.hbo-ict.cloud/media/acf305d75b7d4e0f8da3f966ee917707/00000006000000000000000000000000.jpeg");
             }
 
             .button1 {
