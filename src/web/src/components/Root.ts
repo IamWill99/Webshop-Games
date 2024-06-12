@@ -556,10 +556,10 @@ export class Root extends LitElement {
                 </div>
 
             </motion-carousel>
-            <h1>Welkom op de Luca Stars webshop!</h1>
+            <h1></h1>
             ${this._isLoggedIn
                 ? nothing
-                : html`<p>Je moet ingelogd zijn om producten aan je winkelmandje toe te kunnen voegen!</p>`}
+                : html`<p></p>`}
 
                 <div class="order-items">${orderItems}</div>
             </body>
