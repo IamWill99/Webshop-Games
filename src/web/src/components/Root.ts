@@ -21,6 +21,7 @@ enum RouterPage {
     Shipping = "shipping",
     Returns = "Returns", // New route for returns
     product = "product", // New route for returns
+    productDetails = "product-details",
 }
 
 /**
@@ -252,7 +253,7 @@ export class Root extends LitElement {
      * Get all available order items
      */
     private async getOrderItems(): Promise<void> {
-        const result: OrderItem[] | undefined = await this._orderItemService.getAll();
+        const result: OrderItem[] | undefined = await this._orderItemService.getAll("ASC");
 
         if (!result) {
             return;
@@ -378,6 +379,9 @@ export class Root extends LitElement {
                 break;
             case RouterPage.product: // Nieuwe case voor product
                 contentTemplate = html`<product-root></product-root>`;
+                break;
+            case RouterPage.product: // Nieuwe case voor product
+                contentTemplate = html`<product-details></product-details>`;
                 break;
             default:
                 contentTemplate = this.renderHome();

@@ -1,12 +1,12 @@
 import { LitElement, html, css, TemplateResult, CSSResult } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import {OrderItemService} from "../services/OrderItemService";
+import { OrderItemService } from "../services/OrderItemService";
 
 // De Product interface definieert de structuur van een product object.
 // Elk product heeft een naam, een URL van een afbeelding, een beschrijving, en een prijs.
 // Dit wordt gebruikt om type-veiligheid te garanderen bij het werken met producten in de applicatie.
 
-interface Product {
+export interface Product {
     id: number;
     images: unknown;
     thumbnail: unknown;
@@ -14,6 +14,10 @@ interface Product {
     imageUrl: string;
     description: string;
     price: string;
+}
+
+interface HTMLSelectEvent extends Event {
+    target: HTMLSelectElement;
 }
 
 
@@ -34,23 +38,30 @@ export class product extends LitElement {
 
   // Definieer en initialiseer de array met producten
   @property() public products: any =[];
-  @property({ type: Number }) public remainingTime: number = this.cartTimeout; // Resterende tijd in milliseconden
+
+    private cart: Map<Product, number> = new Map(); // Hier houden we het winkelwagentje bij
 
 
-private cart: Map<Product, number> = new Map(); // Hier houden we het winkelwagentje bij
+    private handleSortChange(event: HTMLSelectEvent): void {
+        const sortingOrder: string = event.target.value;
+        console.log("Selected sort type:", sortingOrder);
+        this.fetchProducts(sortingOrder);
+    }
+
+
+
+
 
 public connectedCallback(): void {
     super.connectedCallback();
-    this.fetchProducts();
-    this.checkCartExpiry();
-    this.startCartTimer();
+    this.fetchProducts("ASC");
 }
 
-  public fetchProducts(): void {
-    const service:OrderItemService = new OrderItemService();
+    public fetchProducts(sortingOrder: string): void {
+        const service: OrderItemService = new OrderItemService();
 
-    const result: any = service.getAll().then((value: any) => {
-        console.log(value);
+        const result: any = service.getAll(sortingOrder).then((value: any) => {
+            console.log(value);
 
         this.products = value;
     }).catch((error) => {
@@ -60,7 +71,6 @@ public connectedCallback(): void {
     console.log(result);
 }
 
-    
 
     public static styles: CSSResult = css`
         /* Voeg hier je CSS-stijlen toe voor de "Product Page"-pagina */
@@ -334,16 +344,15 @@ a:hover {
         this.products = [...this.products, ...nextProducts];
     }
 
-    
+
 
     private addToCart(product: Product): void {
-        const currentQuantity:any = this.cart.get(product) || 0;
+        const currentQuantity: any = this.cart.get(product) || 0;
         this.cart.set(product, currentQuantity + 1); // Voeg één exemplaar van het product toe
-    
+
         // Sla de inhoud van het winkelwagentje op in de sessie
         sessionStorage.setItem("cart", JSON.stringify(Array.from(this.cart.entries())));
-        sessionStorage.setItem("cartLastUpdated", new Date().toISOString());
-
+    
         this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
         this.startCartTimer(); // Reset de timer bij elke update
 
@@ -363,20 +372,25 @@ a:hover {
     </li>
     `);
         // Navbar & Filters HTML
-    
+
         return html`
             <div class="wrapper">
             
-                
+    
+            <h2>Sort by:</h2>
 
-                <ul class="product-filter">
-                    <li><span class="filter-title">Filter: </span></li>
-                    <li class="filter-option"><a href="#">Genre</a></li>
-                    <li class="filter-option"><a href="#" class="selected">Rating</a></li>
-                    <li class="filter-option"><a href="#">Name</a></li>
-                    <li class="filter-option"><a href="#">Price</a></li>
-                    <li class="filter-option"><a href="#">Offers</a></li>
-                </ul>
+
+            
+    <select id="type" @change="${this.handleSortChange}">
+           
+    <option value="ASC">Ascending</option>
+    <option value="DESC">Descending</option>
+          
+        </select>
+
+        <br>
+        <br>
+
     
                 <section class="cart-section">
                 <h2>Shoppingcart</h2>
@@ -423,11 +437,11 @@ a:hover {
             </div>
         `;
     }
-    
+
     private goToProductDetails(productId: number): void {
         window.location.href = `/product-details?id=${productId}`;
     }
-    
+
 
     // Deze methode navigeert naar de vorige pagina met producten.
     // Het controleert eerst of de huidige pagina groter is dan 1.
@@ -441,7 +455,7 @@ a:hover {
         }
     }
 
-    
+
 
     // Deze methode navigeert naar de volgende pagina met producten.
     // Het berekent eerst het totale aantal pagina's op basis van het aantal producten en producten per pagina.
@@ -451,16 +465,16 @@ a:hover {
 
 
     private navigateToNext(): void {
-        const totalPages: number = 5; 
+        const totalPages: number = 5;
         Math.ceil(this.products.length / this.productsPerPage);
         if (this.currentPage < totalPages) {
             this.currentPage++;
 
-             // Voeg nieuwe producten toe voordat je de weergave bijwerkt
-             this.addNextPageProducts();
+            // Voeg nieuwe producten toe voordat je de weergave bijwerkt
+            this.addNextPageProducts();
 
             this.requestUpdate(); // Herbouw de weergave om de nieuwe pagina te tonen
-        }  else {
+        } else {
             // De huidige pagina is de laatste pagina, dus doe niets
             console.log("Dit is de laatste pagina. Kan niet verder gaan.");
         }
@@ -470,15 +484,9 @@ a:hover {
     private emptyCart(): void {
         this.cart.clear();
         sessionStorage.removeItem("cart");
-        sessionStorage.removeItem("cartExpiryTime");
-
-        clearTimeout(this.cartTimer);
-        clearInterval(this.intervalId);
-        this.remainingTime = this.cartTimeout;
-
-        this.requestUpdate();
+    
+        this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
     }
-
     
     private removeFromCart(product: Product): void {
         const currentQuantity: any = this.cart.get(product) || 0;
@@ -488,7 +496,8 @@ a:hover {
             this.cart.delete(product);
         }
         sessionStorage.setItem("cart", JSON.stringify(Array.from(this.cart.entries())));
-        this.requestUpdate();
+        
+        this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
     }
 
     private goToCheckout(): void {
@@ -546,16 +555,16 @@ a:hover {
     
 
     protected firstUpdated(): void {
-        const storedCart:any = sessionStorage.getItem("cart");
-    if (storedCart) {
-        this.cart = new Map(JSON.parse(storedCart));
-        this.requestUpdate(); // Herbouw de weergave om de winkelwagen bij te werken
-    }
+        const storedCart: any = sessionStorage.getItem("cart");
+        if (storedCart) {
+            this.cart = new Map(JSON.parse(storedCart));
+            this.requestUpdate(); // Herbouw de weergave om de winkelwagen bij te werken
+        }
         // eslint-disable-next-line @typescript-eslint/typedef
         const shadowRoot = this.shadowRoot;
         if (shadowRoot) {
             const moreInfoButtons: NodeListOf<HTMLButtonElement> | null = shadowRoot.querySelectorAll(".more-info-button");
-    
+
             if (moreInfoButtons) {
                 moreInfoButtons.forEach((button: HTMLButtonElement) => {
                     button.addEventListener("click", () => {
@@ -568,7 +577,7 @@ a:hover {
                                 // eslint-disable-next-line @typescript-eslint/typedef
                                 const descriptionElement = productDescription as HTMLElement;
                                 if (descriptionElement.style.display === "none" || !descriptionElement.style.display) {
-                                    descriptionElement.style.display ="block";
+                                    descriptionElement.style.display = "block";
                                 } else {
                                     descriptionElement.style.display = "none";
                                 }
@@ -578,9 +587,9 @@ a:hover {
                 });
             }
         }
-        
+
     }
- 
-    
+
+
 }
 
