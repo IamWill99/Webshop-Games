@@ -1,5 +1,4 @@
 import { OrderItem } from "@shared/types";
-
 /**
  * Handles order item related functionality
  */
@@ -25,7 +24,3 @@ export class OrderItemService {
         return (await response.json()) as OrderItem[];
     }
 }
-
-
-
-

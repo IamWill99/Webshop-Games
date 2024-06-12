@@ -6,6 +6,7 @@ import { OrderItemService } from "../services/OrderItemService";
  * Handles all endpoints related to the Order Item resource
  */
 export class OrderItemController {
+    getProductById: any;
     /**
      * Get all order items
      * 

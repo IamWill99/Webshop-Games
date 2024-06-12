@@ -41,5 +41,3 @@ export class OrderItemService {
         return response;
     }
 }
-
-
