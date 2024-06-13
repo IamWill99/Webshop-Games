@@ -1,6 +1,6 @@
 Individuele retrospective
 Siem Baltus
-   ![alt text](retro.jpeg)
+   ![alt text](retro.jpg)
 Augustus 2023
 Hoe stond je erin?
 Ik vond het wel spannend om voor het eerst hier naar school te gaan. Omdat ik hiervoor alleen de have heb gedaan en omdat ik niet precies wist wat ik kon verwachten van het hbo. Ik had ook nog geen ervaring met programmeren.
