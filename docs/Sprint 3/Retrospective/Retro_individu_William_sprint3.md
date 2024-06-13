@@ -1,3 +1,3 @@
 # Individuele retrospective William Boutros
 
-![alt text](augustus2023.jpeg)
+![alt text](Augustus2023.jpeg)
