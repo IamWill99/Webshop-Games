@@ -16,3 +16,5 @@ Wat ik achterlaat is het te laat begginen met opdrachten.
 ### Doel 2e jaar
 Mijn doel voor het 2e jaar is om alle studiepunten te gaan halen.
 
+![Alt text](<Retro tekening augustus 2023.jpg>)
+![Alt text](<Retro tekening juni 2024.jpg>)
