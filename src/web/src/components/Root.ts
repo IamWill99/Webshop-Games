@@ -155,6 +155,8 @@ export class Root extends LitElement {
                 color: #ecae20;
             }
 
+
+
             .social-icons img {
                 width: 40px; /* Pas de breedte van de sociale mediapictogrammen aan */
                 height: auto; /* Hierdoor schaalt de hoogte automatisch met behoud van de aspectverhouding */
@@ -218,6 +220,9 @@ export class Root extends LitElement {
                 margin-bottom: 10px;
                 height: 320px;
                 width: 750px;
+
+
+
 
 }
 
@@ -646,7 +651,7 @@ export class Root extends LitElement {
         return html`
                 <div class="form">
                     <div>
-                        <label for="username">Naam</label>
+                        <label for="username">Name</label>
                         <input type="text" id="name" value=${this._name} @change=${this.onChangeName} />
                     </div>
 
@@ -783,14 +788,14 @@ export class Root extends LitElement {
      */
     private renderPassword(): TemplateResult {
         return html`<div>
-                <label for="password">Wachtwoord</label>
+                <label for="password">Password</label>
                 <input type="password" value=${this._password} @change=${this.onChangePassword} />
             </div>`;
     }
 
     private renderFirstName(): TemplateResult {
         return html`<div>
-        <label for="firstName">Firstname</label>
+        <label id="firstNameLabel" for="firstName">Firstname</label>
         <input type="text" value=${this._firstName} @change=${this.onChangeFirstName} />
     </div>`;
     }
