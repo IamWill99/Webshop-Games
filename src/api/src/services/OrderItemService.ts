@@ -11,7 +11,9 @@ export class OrderItemService {
      * 
      * @returns A list of all order items when successful, otherwise `undefined`.
      */
-    public async getAll(): Promise<OrderItem[] | undefined> {
+    public async getAll(sortOn: string): Promise<OrderItem[] | undefined> {
+        console.log(`sortOn [${sortOn}] `);
+
       
         const connection: any = await getConnection();
 
