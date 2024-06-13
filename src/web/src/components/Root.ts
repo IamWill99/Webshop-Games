@@ -504,8 +504,10 @@ export class Root extends LitElement {
             <body>
                 <div class="hero-image">
                     <div class="hero-text">
-                        <h1 style="font-size:50px">Promotion Banner</h1>
-                        <a href="product.html"><button class="button button1">More information</button></a>
+                        <h1 style="font-size:50px; color: #ecae20">Promotion Banner</h1>
+                        <a @click="${(): void => {
+                this._currentPage = RouterPage.product;
+            }}"><button class="button button1">More information</button></a>
                     </div>
                 </div>
                 <div class="carousel-container">
@@ -562,28 +564,38 @@ export class Root extends LitElement {
                 <div class="game1">
                     <img src="https://lucastars.hbo-ict.cloud/media/84c86ce53485454382fb2287e387fa9e/00000006000000000000000000000000.png">
                     <h3>Bomb squad: classroom crisis</h3><br>
-                    <a href="product.html" class="button1">Product page</a>
+                    <a @click="${(): void => {
+                this._currentPage = RouterPage.product;
+            }}" class="button1">Product page</a>
                 </div>
                 <div class="game1">
                     <img src="https://lucastars.hbo-ict.cloud/media/a1817eb437324b71b233be41587d1d8d/00000006000000000000000000000000.png">
                     <h3>The Cave of Magic</h3> <br>
-                    <a href="product.html" class="button1">Product page</a>
+                    <a @click="${(): void => {
+                this._currentPage = RouterPage.product;
+            }}" class="button1">Product page</a>
                 </div>
 
                 <div class="game1">
                     <img src="https://lucastars.hbo-ict.cloud/media/0d30bd2354d64d8b908ed3c44b02e74e/00000006000000000000000000000000.png" alt="Metro 8">
                     <h3>Realm of Enigma | Chronicles of Time</h3><br>
-                    <a href="product.html" class="button1">Product page</a>
+                    <a @click="${(): void => {
+                this._currentPage = RouterPage.product;
+            }}" class="button1">Product page</a>
                 </div>
                 <div class="game1">
                     <img src="https://lucastars.hbo-ict.cloud/media/12306551034f4d2ebeed526ffd193121/00000006000000000000000000000000.png">
                     <h3>DOORWAY OF DECEPTION</h3><br>
-                    <a href="product.html" class="button1">Product page</a>
+                    <a @click="${(): void => {
+                this._currentPage = RouterPage.product;
+            }}" class="button1">Product page</a>
                 </div>
                 <div class="game1">
                     <img src="https://lucastars.hbo-ict.cloud/media/3fcbea3f2e3b4818ba8e1b0584550df0/00000006000000000000000000000000.png" >
                     <h3>Lost Girl</h3><br>
-                    <a href="product.html" class="button1">Product page</a>
+                    <a @click="${(): void => {
+                this._currentPage = RouterPage.product;
+            }}" class="button1">Product page</a>
                 </div>
 
             </motion-carousel>
@@ -651,7 +663,7 @@ export class Root extends LitElement {
         return html`
                 <div class="form">
                     <div>
-                        <label for="username">Name</label>
+                        <label id="nameLabel" for="username">Name</label>
                         <input type="text" id="name" value=${this._name} @change=${this.onChangeName} />
                     </div>
 
@@ -772,7 +784,7 @@ export class Root extends LitElement {
      */
     private renderEmail(): TemplateResult {
         return html`<div>
-                <label for="email">E-mail</label>
+                <label id="emailInput" for="email">E-mail</label>
                 <input
                     type="text"
                     name="email"
@@ -788,7 +800,7 @@ export class Root extends LitElement {
      */
     private renderPassword(): TemplateResult {
         return html`<div>
-                <label for="password">Password</label>
+                <label id="passwordLabel" for="password">Password</label>
                 <input type="password" value=${this._password} @change=${this.onChangePassword} />
             </div>`;
     }
@@ -844,6 +856,7 @@ const styles: ReturnType<typeof css> = css`
 
     }
 
+    
 
     .fit {
         position: relative;
