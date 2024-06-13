@@ -22,6 +22,7 @@ enum RouterPage {
     Returns = "Returns", // New route for returns
     product = "product", // New route for returns
     productDetails = "product-details",
+    profile = "profile"
 }
 
 /**
@@ -95,6 +96,22 @@ export class Root extends LitElement {
                 cursor: pointer;
                 border-style: solid;
                 border-color: red;
+            }
+
+            #Profilebutton {
+                background-color: transparent;
+                font-weight: 750;
+                font-size: 18px;
+                color: rgb(18, 26, 132);
+                font-size: 15px;
+                border-radius: 30px;
+                padding: 5px;
+                text-align: center;
+                cursor: pointer;
+                border-style: solid;
+                border-color: transparent;
+                left: 600px;
+                display: absolute;
             }
 
             .order-items {
@@ -383,6 +400,9 @@ export class Root extends LitElement {
             case RouterPage.product: // Nieuwe case voor product
                 contentTemplate = html`<product-details></product-details>`;
                 break;
+                case RouterPage.profile: // Nieuwe case voor product
+                contentTemplate = html`<profile-root></profile-root>`;
+                break;    
             default:
                 contentTemplate = this.renderHome();
         }
@@ -407,8 +427,8 @@ export class Root extends LitElement {
                             <img src="/assets/img/logo.png" alt="Logo" />
                         </div>
 
-                        ${this.renderLoginInNav()} ${this.renderRegisterInNav()} ${this.renderCartInNav()}
-                        ${this.renderLogoutInNav()}  ${this.renderGameNav()} 
+                        ${this.renderLoginInNav()} ${this.renderRegisterInNav()} 
+                        ${this.renderLogoutInNav()}  ${this.renderGameNav()} ${this.renderProfileNav()}
                     </nav>
                     
                 </header>
@@ -472,7 +492,7 @@ export class Root extends LitElement {
         const orderItems: TemplateResult[] = this._orderItems.map((e) => this.renderOrderItem(e));
 
         if (orderItems.length === 0) {
-            return html`<div class="order-items">Laden... Even geduld alstublieft.</div> `;
+            return html`<div class="order-items">Loading...</div> `;
         }
 
         return html`
@@ -535,23 +555,24 @@ export class Root extends LitElement {
                 
 
                 <div class="game1">
-                    <img src="https://lucastars.hbo-ict.cloud/media/7da176806505408c88b0d5f16f000a7b/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
-                    <h3>Lost Memories: Quest of the Forgotten Knight</h3> <br>
+                    <img src="https://lucastars.hbo-ict.cloud/media/84c86ce53485454382fb2287e387fa9e/00000006000000000000000000000000.png">
+                    <h3>Bomb squad: classroom crisis</h3><br>
                     <a href="product.html" class="button1">Product page</a>
                 </div>
                 <div class="game1">
-                    <img src="https://lucastars.hbo-ict.cloud/media/aeb7eb3c542347b6830659a4e0d9885d/00000006000000000000000000000000.png" alt="The dragon-Slayer 3000">
-                    <h3>The dragon-Slayer 3000</h3><br>
+                    <img src="https://lucastars.hbo-ict.cloud/media/a1817eb437324b71b233be41587d1d8d/00000006000000000000000000000000.png">
+                    <h3>The Cave of Magic</h3> <br>
+                    <a href="product.html" class="button1">Product page</a>
+                </div>
+
+                <div class="game1">
+                    <img src="https://lucastars.hbo-ict.cloud/media/0d30bd2354d64d8b908ed3c44b02e74e/00000006000000000000000000000000.png" alt="Metro 8">
+                    <h3>Realm of Enigma | Chronicles of Time</h3><br>
                     <a href="product.html" class="button1">Product page</a>
                 </div>
                 <div class="game1">
-                    <img src="https://lucastars.hbo-ict.cloud/media/f517798d34f14abcb65bee7386ef38dd/00000006000000000000000000000000.png" alt="Metro 8">
-                    <h3>Metro 8</h3><br>
-                    <a href="product.html" class="button1">Product page</a>
-                </div>
-                <div class="game1">
-                    <img src="https://lucastars.hbo-ict.cloud/media/2626cba298e74c869dfabb1fe9f778b3/00000006000000000000000000000000.png" alt="Lost Memories: Quest of the Forgotten Knight">
-                    <h3>Save The Future</h3><br>
+                    <img src="https://lucastars.hbo-ict.cloud/media/12306551034f4d2ebeed526ffd193121/00000006000000000000000000000000.png">
+                    <h3>DOORWAY OF DECEPTION</h3><br>
                     <a href="product.html" class="button1">Product page</a>
                 </div>
                 <div class="game1">
@@ -585,9 +606,7 @@ export class Root extends LitElement {
 
                  <img src="${orderItem.image}" alt="${orderItem.title}">
                 ${this._isLoggedIn
-                    ? html`<button @click=${async (): Promise<void> => await this.addItemToCart(orderItem)}>
-                          Toevoegen aan winkelmandje
-                      </button>`
+                    ? html``
                     : nothing}
             </div>
         `;
@@ -602,7 +621,7 @@ export class Root extends LitElement {
                     ${this.renderEmail()} ${this.renderPassword()}
 
                     <div>
-                        <button @click="${this.submitLoginForm}" type="submit">Inloggen</button>
+                        <button @click="${this.submitLoginForm}" type="submit">Login</button>
                     </div>
 
                     <div>
@@ -634,7 +653,7 @@ export class Root extends LitElement {
                     ${this.renderEmail()} ${this.renderPassword()} ${this.renderFirstName()}
 
                     <div>
-                        <button @click="${this.submitRegisterForm}" type="submit">Registreer</button>
+                        <button @click="${this.submitRegisterForm}" type="submit">Register</button>
                     </div>
 
                     <div>
@@ -646,7 +665,7 @@ export class Root extends LitElement {
                         >
                             Login
                         </button>
-                        door hier te klikken.
+                        By pressing here.
                     </div>
                 </div>
             `;
@@ -665,7 +684,7 @@ export class Root extends LitElement {
                 this._currentPage = RouterPage.Login;
             }}
             >
-                <button>Inloggen</button>
+                <button id="Profilebutton">Login</button>
             </div>`;
     }
 
@@ -682,22 +701,30 @@ export class Root extends LitElement {
                 this._currentPage = RouterPage.Register;
             }}
             >
-                <button>Registreren</button>
+                <button id="Profilebutton">Register</button>
             </div>`;
     }
 
-    /**
-     * Renders the cart button in the navigation
-     */
-    private renderCartInNav(): TemplateResult {
+    private renderProfileNav(): TemplateResult {
         if (!this._isLoggedIn) {
             return html``;
         }
 
-        return html`<div @click=${this.clickCartButton}>
-                <button>Winkelmandje (${this._cartItemsCount} producten)</button>
+        return html`<div
+                @click=${(): void => {
+                this._currentPage = RouterPage.profile;
+            }}
+            >
+                
             </div>`;
+
     }
+
+
+    /**
+     * Renders the cart button in the navigation
+     */
+
 
     /**
      * Renders the logout button in the navigation
@@ -709,7 +736,7 @@ export class Root extends LitElement {
 
         return html`
                 <div @click=${this.clickLogoutButton}>
-                    <button>Logout</button>
+                    <button id="Profilebutton">Logout</button>
                 </div>
             `;
     }
@@ -724,10 +751,16 @@ export class Root extends LitElement {
                 this._currentPage = RouterPage.product;
             }}
             >
-                <button>Game</button>
+                <button id="Profilebutton">Games</button>
+                <button id="Profilebutton" @click=${this.goToProfile}>Profile</button>
             </div>`;
     }
 
+    
+    private goToProfile(): void {
+
+        window.location.href = "profile"; // Navigeer naar de profiel
+    }
 
     /**
      * Renders the e-mail input field with change-tracking

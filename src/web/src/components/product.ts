@@ -27,9 +27,6 @@ export class product extends LitElement {
 
     private currentPage: number = 1;
     private productsPerPage: number = 9; // Bijvoorbeeld, 9 producten per pagina
-    private cartTimeout: number = 3600000; // 1 uur in milliseconden
-    private cartTimer: number | undefined;
-    private intervalId: number | undefined;
 
     public _userService: any;
     public _cartItemsCount: number | undefined;
@@ -299,7 +296,21 @@ a:hover {
     color:white;
 }
 
+.like-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color:green;
+    color:white;
+}
+
 #orderButton:hover {
+    background-color: #555;
+}
+
+.like-button:hover {
     background-color: #555;
 }
 
@@ -348,16 +359,23 @@ a:hover {
 
     private addToCart(product: Product): void {
         const currentQuantity: any = this.cart.get(product) || 0;
-        this.cart.set(product, currentQuantity + 1); // Voeg één exemplaar van het product toe
+    this.cart.set(product, currentQuantity + 1);
 
-        // Sla de inhoud van het winkelwagentje op in de sessie
-        sessionStorage.setItem("cart", JSON.stringify(Array.from(this.cart.entries())));
-    
+    // Sla het product op in de sessionStorage
+    const cartArray: [Product, number][] = Array.from(this.cart.entries());
+    sessionStorage.setItem("cart", JSON.stringify(cartArray));
+
+    // Start een timeout om de winkelwagen na een uur te legen
+    setTimeout(() => {
+        sessionStorage.removeItem("cart");
+        this.cart.clear();
         this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
-        this.startCartTimer(); // Reset de timer bij elke update
+    }, 7200); // 3600000 ms = 1 uur
 
+    this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
     }
 
+    
 
     protected render(): TemplateResult {
         const startIndex: number = (this.currentPage - 1) * this.productsPerPage;
@@ -419,7 +437,9 @@ a:hover {
                                 <div> 
                                     <span class="base-price">€ ${product.price}</span>
                                     <button class="add-to-cart-button" @click=${(): void => this.addToCart(product)}>In cart</button>
-                                    
+                                    <button class="like-button" @click=${(): void => this.addToLikedProducts(product)}>
+                            ${this.likedProductTitles.has(product.name) ? "Unlike" : "Like"}
+                        </button>
                                 </div>
                             </div>
                         </div>
@@ -505,56 +525,37 @@ a:hover {
         window.location.href = "checkOut"; // Navigeer naar de bestelpagina
     }
 
-    private checkCartExpiry(): void {
-        const savedCart:any = sessionStorage.getItem("cart");
-        const savedTime:any = sessionStorage.getItem("cartExpiryTime");
+    @property({ type: Set }) private likedProductTitles: Set<string> = new Set();
 
-        if (savedCart && savedTime) {
-            const now:any = new Date().getTime();
-            const expiryTime:any = parseInt(savedTime);
-
-            if (now > expiryTime) {
-                this.emptyCart();
-            } else {
-                this.cart = new Map(JSON.parse(savedCart));
-                this.remainingTime = expiryTime - now;
-                this.requestUpdate();
-            }
-        }
-    }
-
-    private startCartTimer(): void {
-        clearTimeout(this.cartTimer);
-
-        const savedTime:any = sessionStorage.getItem("cartExpiryTime");
-        const now:any = new Date().getTime();
-        this.remainingTime = savedTime ? Math.max(0, parseInt(savedTime) - now) : this.cartTimeout;
-
-        if (this.remainingTime <= 0) {
-            this.emptyCart();
+    private addToLikedProducts(product: Product): void {
+        if (this.likedProductTitles.has(product.name)) {
+            this.likedProductTitles.delete(product.name);
         } else {
-            this.cartTimer = window.setTimeout(() => {
-                this.emptyCart();
-            }, this.remainingTime);
-
-            this.updateRemainingTime();
+            this.likedProductTitles.add(product.name);
         }
-    }
+    
+        // Sla de gelikete producttitels op in localStorage
+        localStorage.setItem("likedProductTitles", JSON.stringify(Array.from(this.likedProductTitles)));
+    
+        this.dispatchEvent(new CustomEvent("liked-products-updated", {
+            detail: { likedProductTitles: this.likedProductTitles },
+        }));
+        
 
-    private updateRemainingTime(): void {
-        this.intervalId = window.setInterval(() => {
-            if (this.remainingTime > 0) {
-                this.remainingTime -= 1000;
-                this.requestUpdate();
-            } else {
-                clearInterval(this.intervalId);
-            }
-        }, 1000);
+        this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
     }
 
     
 
     protected firstUpdated(): void {
+        
+
+        const storedLikedProductTitles: any = localStorage.getItem("likedProductTitles");
+    if (storedLikedProductTitles) {
+        this.likedProductTitles = new Set(JSON.parse(storedLikedProductTitles));
+        this.requestUpdate(); // Herbouw de weergave om de veranderingen te tonen
+    }
+
         const storedCart: any = sessionStorage.getItem("cart");
         if (storedCart) {
             this.cart = new Map(JSON.parse(storedCart));
