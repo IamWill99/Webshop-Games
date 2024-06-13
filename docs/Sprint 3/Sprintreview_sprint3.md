@@ -13,7 +13,7 @@ Vandaag op 13-06-2024 hebben we onze laatste sprintreview gehad van het jaar. Hi
 **Wat beter had gekund:**
 
 - Betere planning, zodat we meer user stories kunnen afmaken
-- Er was helaas geen adminpage
+- Er was helaas geen adminpage, dus plan beter om deze ook af te krijgen.
 - Taakverdeling beter regelen, omdat sommige teamleden meer werk hebben verricht dan anderen.
 
 **Aanpak voor semester 3:**
