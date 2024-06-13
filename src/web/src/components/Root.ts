@@ -625,15 +625,15 @@ export class Root extends LitElement {
                     </div>
 
                     <div>
-                        Of
+                        Or
                         <button
                             @click="${(): void => {
                 this._currentPage = RouterPage.Register;
             }}"
                         >
-                            Registreer
+                            Register
                         </button>
-                        je door hier te klikken.
+                        By clicking here.
                     </div>
                 </div>
             `;
@@ -657,7 +657,7 @@ export class Root extends LitElement {
                     </div>
 
                     <div>
-                        Of
+                        Or
                         <button
                             @click="${(): void => {
                 this._currentPage = RouterPage.Login;
