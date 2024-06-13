@@ -1,6 +1,6 @@
 # Samenvatting van de afbeelding hierboven
 ## Wie was ik in augustus 2023?
-In augustus 2023 was ik al goed voorbereid op wat ik kan verwachten van het HBO op de HVA, omdat ik al meerdere mensen ken die deze opleiding doen of hebben afgerond. Voor deze opleiding heb ik al een MBO opleiding afgerond Software developer, daardoor heb ik al ervaring in programmeren en hoe ik met databases moet werken. Ook had ik al met SCRUM gewerkt. Wat ik niet had toen ik deze opleiding begon was het ervaring in het werken met frameworks. En was ik ook niet zo goed in het plannen van sprints.
+In augustus 2023 was ik al goed voorbereid op wat ik kan verwachten van de opleiding HBO-ICT op de HVA, omdat ik al meerdere mensen ken die deze opleiding doen of hebben afgerond. Voor deze opleiding heb ik al een MBO opleiding afgerond Software developer, daardoor heb ik al ervaring in programmeren en hoe ik met databases moet werken. Ook had ik al met SCRUM gewerkt. Wat ik niet had toen ik deze opleiding begon was het ervaring in het werken met frameworks. En was ik ook niet zo goed in het plannen van sprints.
 
 ## Hoe sta ik er nu in in juni 2024?
 ### Wat heb ik geleerd?
